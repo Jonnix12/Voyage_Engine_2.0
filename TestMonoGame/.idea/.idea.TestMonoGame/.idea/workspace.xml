@@ -5,32 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8a55119-76db-4770-af5d-5b5c5778feee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TestMonoGame/Content/png-transparent-the-woman-warrior-female-woman-warrior-game-child-cg-artwork-thumbnail.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Assets/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Assets/Warrior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Content/obj/Windows/net6.0-windows/Content/.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Content/obj/Windows/net6.0-windows/Content/.mgcontent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Content/obj/Windows/net6.0-windows/Content/.mgstats" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Content/obj/Windows/net6.0-windows/Content/.mgstats" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Content/obj/Windows/net6.0-windows/Content/ball.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Content/obj/Windows/net6.0-windows/Content/ball.mgcontent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Game_Engine/ComponentSystem/Components/SpriteRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Game_Engine/ComponentSystem/Components/SpriteRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Game_Engine/GameObjectSystem/GameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Game_Engine/GameObjectSystem/GameObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/Render_Engine/RenderObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/Render_Engine/RenderObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/bin/Debug/net6.0-windows/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/bin/Debug/net6.0-windows/Voage_Engine.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/bin/Debug/net6.0-windows/Voage_Engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/bin/Debug/net6.0-windows/Voage_Engine.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/TestMonoGame.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/Voage_Engine.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/Voage_Engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/Voage_Engine.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/ref/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/ref/Voage_Engine.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/refint/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/Debug/net6.0-windows/refint/Voage_Engine.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/TestMonoGame.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/TestMonoGame.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/TestMonoGame.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/TestMonoGame.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMonoGame/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TestMonoGame/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestMonoGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestMonoGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Assets/Scenes/MainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Assets/Scenes/MainScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Assets/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Assets/Warrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Content/obj/Windows/net6.0-windows/Content/.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Content/obj/Windows/net6.0-windows/Content/.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Content/obj/Windows/net6.0-windows/Content/.mgstats" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Content/obj/Windows/net6.0-windows/Content/.mgstats" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Content/obj/Windows/net6.0-windows/Content/ball.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Content/obj/Windows/net6.0-windows/Content/ball.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Game_Engine/ComponentSystem/Components/SpriteRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Game_Engine/ComponentSystem/Components/SpriteRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Game_Engine/FactorySystem/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Game_Engine/FactorySystem/Factory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Game_Engine/TileMap/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Game_Engine/TileMap/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Game_Engine/TileMap/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Game_Engine/TileMap/TileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Game_Engine/TransformSystem/Transform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Game_Engine/TransformSystem/Transform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Render_Engine/IRenderObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Render_Engine/IRenderObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Render_Engine/MainRenderEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Render_Engine/MainRenderEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/Render_Engine/RenderObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/Render_Engine/RenderObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/bin/Debug/net6.0-windows/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/bin/Debug/net6.0-windows/Voage_Engine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/bin/Debug/net6.0-windows/Voage_Engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/bin/Debug/net6.0-windows/Voage_Engine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/Voage_Engine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/Voage_Engine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/Voage_Engine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/ref/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/ref/Voage_Engine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/refint/Voage_Engine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MainEngine/obj/Debug/net6.0-windows/refint/Voage_Engine.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +33,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b3f3e3d470644786bce7a05008b0d88fed800/7f/1e379978/ContentManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b3f3e3d470644786bce7a05008b0d88fed800/9c/580c6479/Game.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Assets/Warrior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Game_Engine/ComponentSystem/Components/SpriteRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Game_Engine/GameObjectSystem/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Game_Engine/TransformSystem/Transform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Game_Engine/Vector/Vector2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Render_Engine/MainRenderEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainEngine/Render_Engine/RenderObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676649324867</updated>
-      <workItem from="1676649325388" duration="3450000" />
+      <workItem from="1676649325388" duration="6806000" />
     </task>
     <servers />
   </component>

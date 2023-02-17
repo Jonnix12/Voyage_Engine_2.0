@@ -8,9 +8,10 @@ namespace Voyage_Engine.Rendere_Engine;
 
 public abstract class RenderObject : Component, IRenderObject
 {
-    protected abstract string Path { get; }
+    protected Texture2D _texture2D;
 
-    private Texture2D _texture2D;
+    protected abstract string Path { get; }
+    public int Layer { get; set; }
 
     protected RenderObject()
     {
@@ -22,14 +23,26 @@ public abstract class RenderObject : Component, IRenderObject
         MainRenderEngine.UnRegisterObject(this);
         base.Dispose();
     }
-    
+
+
+
     public void LoadContent(ContentManager contentManager)
     {
         _texture2D = contentManager.Load<Texture2D>(Path);
     }
 
-    public void Render(SpriteBatch spriteBatch)
+    public virtual void Render(SpriteBatch spriteBatch)
     {
         spriteBatch.Draw(_texture2D,new Vector2(Transform.Position.X,Transform.Position.Y),Color.White);//plaster!!!
+    }
+
+    public int CompareTo(int other)
+    {
+        if (other < Layer)
+            return -1;
+        else if(other > Layer)
+            return 1;
+        else
+            return 0;
     }
 }

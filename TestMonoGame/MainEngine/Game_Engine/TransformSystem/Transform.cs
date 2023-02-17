@@ -1,6 +1,6 @@
-﻿using Voyage_Engine.Game_Engine.Engine;
+﻿using Microsoft.Xna.Framework;
+using Voyage_Engine.Game_Engine.Engine;
 using Voyage_Engine.Game_Engine.GameObjectSystem;
-using Voyage_Engine.Rendere_Engine.Vector;
 
 namespace Voyage_Engine.Game_Engine.TransformSystem
 {
@@ -75,7 +75,7 @@ namespace Voyage_Engine.Game_Engine.TransformSystem
 
         public void MoveTowards(Vector2 destination,float maxDistanceDelta)
         {
-            Position = Vector2.MoveTowards(Position, destination, maxDistanceDelta);
+            //Position = Vector2.MoveTowards(Position, destination, maxDistanceDelta);
         }
 
         public void SetGameObject(GameObject gameObject)

@@ -1,11 +1,13 @@
-﻿using System.Drawing;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Voyage_Engine.Game_Engine.GameObjectSystem;
-using Voyage_Engine.Rendere_Engine.Vector;
+using Voyage_Engine.Rendere_Engine;
 
 namespace Voyage_Engine.Game_Engine.TileMap
 {
-    public class Tile 
+    public class Tile : RenderObject
     {
+        protected override string Path { get; }
         public int Row { get; private set; }
         public int Colm { get; private set; }
         
@@ -16,6 +18,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
 
         public Tile(int row,int colm,Vector2 pos,Vector2 size,Color color)
         {
+            Path = "ball";
             Row = row;
             Colm = colm;
             _pos = pos;
@@ -38,6 +41,11 @@ namespace Voyage_Engine.Game_Engine.TileMap
             return true;
         }
 
+        public override void Render(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(_texture2D,new Vector2(_pos.X,_pos.Y),Color.White);//plaster!!!
+        }
+
         public GameObject RemoveTileObject()
         {
             if(_tileObject != null)
@@ -50,6 +58,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
 
             return null;
         }
+
     }
 }
 

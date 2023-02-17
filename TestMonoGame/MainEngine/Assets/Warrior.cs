@@ -7,7 +7,7 @@ namespace Voyage_Engine.Game_Engine.Objects
     {
         public override void Start()
         {
-            AddComponent<SpriteRenderer,string>("ball");
+            AddComponent<SpriteRenderer,string,int>("ball",0);
             Debug.Log("Hey form start");
             base.Start();
         }

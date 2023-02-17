@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,6 +13,8 @@ public class MainRenderEngine : Game
     public event Action OnBeforeFrame;
     public event Action OnAfterFrame;
     public event Action OnCloseWindow;
+
+    private Task _updateTask;
     
     private static List<IRenderObject> _renderObjects;
     
@@ -37,6 +40,8 @@ public class MainRenderEngine : Game
         
         foreach (var renderObject in _renderObjects)
             renderObject.LoadContent(Content);
+        
+        //_renderObjects.Sort();
     }
 
     protected override void Update(GameTime gameTime)
@@ -45,7 +50,7 @@ public class MainRenderEngine : Game
             Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
-        OnBeforeFrame?.Invoke();
+        _updateTask = new Task(OnBeforeFrame);
         
         base.Update(gameTime);
     }

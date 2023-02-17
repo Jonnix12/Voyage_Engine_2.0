@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using Voyage_Engine.Rendere_Engine.Vector;
+using Microsoft.Xna.Framework;
 
 namespace Voyage_Engine.Game_Engine.TileMap
 {

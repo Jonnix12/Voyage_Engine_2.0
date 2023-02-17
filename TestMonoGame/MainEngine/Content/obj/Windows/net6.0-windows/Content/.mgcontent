@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jonha/Documents/GitHub/Unity/Voyage_Engine_2.0/TestMonoGame/TestMonoGame/Content/ball.png</File>
+    <File>C:/Users/jonha/Documents/GitHub/Unity/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/ball.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
