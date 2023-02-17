@@ -1,0 +1,15 @@
+D:\C# Project\Tests\TestMonoGame\Console\bin\Debug\net6.0\Console.exe
+D:\C# Project\Tests\TestMonoGame\Console\bin\Debug\net6.0\Console.deps.json
+D:\C# Project\Tests\TestMonoGame\Console\bin\Debug\net6.0\Console.runtimeconfig.json
+D:\C# Project\Tests\TestMonoGame\Console\bin\Debug\net6.0\Console.dll
+D:\C# Project\Tests\TestMonoGame\Console\bin\Debug\net6.0\Console.pdb
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.csproj.AssemblyReference.cache
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.AssemblyInfoInputs.cache
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.AssemblyInfo.cs
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.csproj.CoreCompileInputs.cache
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.dll
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\refint\Console.dll
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.pdb
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\Console.genruntimeconfig.cache
+D:\C# Project\Tests\TestMonoGame\Console\obj\Debug\net6.0\ref\Console.dll
