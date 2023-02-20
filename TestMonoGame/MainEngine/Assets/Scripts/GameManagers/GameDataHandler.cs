@@ -1,11 +1,9 @@
-﻿using Voyage_Engine.Game_Engine.Objects.Scripts.Board.BoardData;
-using Voyage_Engine.Game_Engine.Objects.Scripts.Players;
+﻿using Voyage_Engine.Game_Engine.Objects.Scripts.Players;
 
 namespace Voyage_Engine.Game_Engine.Objects.Scripts;
 
 public class GameDataHandler
 {
-    private BoardDataHandler _boardData;
     private PlayersHandler _playersHandler;
     
     public GameDataHandler()
@@ -22,7 +20,6 @@ public class GameDataHandler
             {2,0,2,0,2,0,2,0}
         };
         
-        _boardData = new BoardDataHandler(board);
         _playersHandler = new PlayersHandler();
     }
 }

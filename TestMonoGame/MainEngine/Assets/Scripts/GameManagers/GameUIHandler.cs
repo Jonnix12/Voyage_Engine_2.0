@@ -5,10 +5,10 @@ namespace Voyage_Engine.Game_Engine.Objects.Scripts;
 
 public class GameUIHandler
 {
-    private BoardUiHandler _boardUi;
+    private BoardHandler _board;
     
     public GameUIHandler()
     {
-        _boardUi = new BoardUiHandler();
+        _board = new BoardHandler();
     }
 }

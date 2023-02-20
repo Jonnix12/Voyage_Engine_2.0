@@ -3,14 +3,16 @@ using Voyage_Engine.Game_Engine.GameObjectSystem;
 
 namespace Voyage_Engine.Game_Engine.Objects.Scripts.BoardUI;
 
-public class BoardUiHandler
+public class BoardHandler
 {
     private TileMap.TileMap _tileMap;
     
-    public BoardUiHandler()
+    public BoardHandler()
     {
         TileMap.TileMap tileMap = new TileMap.TileMap(8, 8,new Vector2(70,70));
     }
+    
+    public void MovePoc()
 
     public void AddRightPlayerPond(params GameObject[] gameObjects)
     {
