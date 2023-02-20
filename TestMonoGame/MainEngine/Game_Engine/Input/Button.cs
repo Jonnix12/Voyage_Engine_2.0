@@ -24,7 +24,7 @@ namespace Voyage_Engine.Game_Engine.InputSystem
         {
             get
             {
-                Vector2 offset = new Vector2(_spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height) / 2;
+                Vector2 offset = new Vector2(_spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height);
                 return new Rectangle((int)Transform.Position.X - (int)offset.X,
                     (int)Transform.Position.Y - (int)offset.Y,
                    _spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height);
