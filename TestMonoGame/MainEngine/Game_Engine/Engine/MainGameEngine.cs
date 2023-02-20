@@ -57,14 +57,6 @@ namespace Voyage_Engine.Game_Engine.Engine
 
         private static void Update(CancellationToken cancellationToken)
         {
-            var kstate = Keyboard.GetState();
-
-            if (kstate.IsKeyDown((Microsoft.Xna.Framework.Input.Keys) Keys.F))
-            {
-                SceneManager.NextScene();
-                return;
-            }
-            
             SceneManager.CurrentScene.UpdateScene(cancellationToken);
         }
 

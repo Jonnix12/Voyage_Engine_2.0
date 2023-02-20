@@ -32,6 +32,15 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
 
             return this;
         }
+        
+        public TComponent AddComponent<TComponent>() where TComponent : IComponent , new()
+        {
+            TComponent component = new TComponent();
+            
+            _components.Add(component);
+
+            return component;
+        }
 
         public TComponent AddComponent<TComponent,T1>(T1 parameter1) where TComponent : IComponent
         {

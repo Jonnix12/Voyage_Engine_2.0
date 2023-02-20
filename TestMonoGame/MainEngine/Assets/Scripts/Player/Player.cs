@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using Voyage_Engine.Game_Engine.FactorySystem;
+using Voyage_Engine.Game_Engine.GameObjectSystem;
+using Voyage_Engine.Game_Engine.Objects.Scripts.TurnSystem;
 
 namespace Voyage_Engine.Game_Engine.Objects.Scripts;
 
-public class Player
+public class Player : GameObject , ITurnActor
 {
     private int _playerID;
     private string _playerName;
 
+    public bool IsCurrentTurn { get; set; }
     public int PlayerId => _playerID;
 
     public string PlayerName => _playerName;
@@ -29,6 +32,16 @@ public class Player
         }
     }
 
+    public override void Update()
+    {
+        if (IsCurrentTurn)
+        {
+            //doStuff
+        }
+        
+        base.Update();
+    }
+
     public void RemoveCheckersPoc(CheckersPoc checkersPoc)
     {
         if (!_checkersPocs.Contains(checkersPoc))
@@ -36,4 +49,5 @@ public class Player
 
         _checkersPocs.Remove(checkersPoc);
     }
+
 }
