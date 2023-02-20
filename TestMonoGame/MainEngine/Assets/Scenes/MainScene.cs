@@ -1,4 +1,7 @@
 ﻿using System.Threading;
+using Microsoft.Xna.Framework;
+using Voyage_Engine.Game_Engine.FactorySystem;
+using Voyage_Engine.Game_Engine.Objects;
 using Voyage_Engine.Game_Engine.Objects.Scripts;
 using Voyage_Engine.Game_Engine.SceneSystem;
 
@@ -13,7 +16,8 @@ namespace Voyage_Engine.Assest.Scenes
 
         public override void StartScene(CancellationToken cancellationToken)
         {
-            _gameManager = new GameManager();
+            Factory.Instantiate<Warrior>(new Vector2(50,50));
+            //_gameManager = new GameManager();
             base.StartScene(cancellationToken);
         }
     }

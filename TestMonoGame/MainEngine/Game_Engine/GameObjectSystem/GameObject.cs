@@ -33,31 +33,31 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
             return this;
         }
 
-        public void AddComponent<TComponent,T1>(T1 parameter1) where TComponent : IComponent
+        public TComponent AddComponent<TComponent,T1>(T1 parameter1) where TComponent : IComponent
         {
             var parameterTyps = new[] { typeof(T1) };
             var parameters = new object[] { parameter1 };
             
-            AddComponent<TComponent>(parameterTyps, parameters);
+            return AddComponent<TComponent>(parameterTyps, parameters);
         }
         
-        public void AddComponent<TComponent,T1,T2>(T1 parameter1,T2 parameter2) where TComponent : IComponent
+        public TComponent AddComponent<TComponent,T1,T2>(T1 parameter1,T2 parameter2) where TComponent : IComponent
         {
             var parameterTyps = new[] { typeof(T1) ,typeof(T2) };
             var parameters = new object[] { parameter1 , parameter2};
             
-            AddComponent<TComponent>(parameterTyps, parameters);
+            return AddComponent<TComponent>(parameterTyps, parameters);
         }
         
-        public void AddComponent<TComponent,T1,T2,T3>(T1 parameter1,T2 parameter2,T3 parameter3) where TComponent : IComponent
+        public TComponent AddComponent<TComponent,T1,T2,T3>(T1 parameter1,T2 parameter2,T3 parameter3) where TComponent : IComponent
         {
             var parameterTyps = new[] { typeof(T1) ,typeof(T2),typeof(T3) };
             var parameters = new object[] { parameter1 , parameter2,parameter3};
             
-            AddComponent<TComponent>(parameterTyps, parameters);
+            return AddComponent<TComponent>(parameterTyps, parameters);
         }
 
-        private void AddComponent<TComponent>(Type[] parameterTyps, object[] parameters) where TComponent : IComponent
+        private TComponent AddComponent<TComponent>(Type[] parameterTyps, object[] parameters) where TComponent : IComponent
         {
             var type = typeof(TComponent);
             var typeConstructor = type.GetConstructor(parameterTyps);
@@ -68,6 +68,7 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
             TComponent component = (TComponent)typeConstructor.Invoke(parameters);
 
             _components.Add(component);
+            return component;
         }
 
         public void SetActive(bool isActive)
