@@ -11,7 +11,7 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
         
         public static GameObject Instantiate<T>() where T: GameObject, new()
         {
-            return Instantiate<T>(_rootTransform.Scale, _rootTransform, _rootTransform.Scale);
+            return Instantiate<T>(_rootTransform.Position, _rootTransform, _rootTransform.Scale);
         }
 
         public static GameObject Instantiate<T>(Vector2 position) where T: GameObject, new()

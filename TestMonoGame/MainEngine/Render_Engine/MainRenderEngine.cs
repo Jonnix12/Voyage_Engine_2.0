@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,29 +10,28 @@ namespace Voyage_Engine.Rendere_Engine;
 
 public class MainRenderEngine : Game
 {
-    public event Action OnBeforeFirstFrame;
-    public event Action OnBeforeFrame;
+    public event Action<CancellationToken> OnBeforeFirstFrame;
+    public event Action<CancellationToken> OnBeforeFrame;
     public event Action OnAfterFrame;
     public event Action OnCloseWindow;
 
-    private Task _updateTask;
-    
-    private static List<IRenderObject> _renderObjects;
+    private static List<IRenderObject> _renderObjects = new();
     
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    
+
+    private bool _isFirstFrame;
+
+    private CancellationTokenSource _tokenSource;
+
     public MainRenderEngine()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-        _renderObjects = new List<IRenderObject>();
-    }
+        _isFirstFrame = true;
 
-    protected override void Initialize()
-    {
-        base.Initialize();
+        _tokenSource = new CancellationTokenSource();
     }
 
     protected override void LoadContent()
@@ -44,14 +44,27 @@ public class MainRenderEngine : Game
         //_renderObjects.Sort();
     }
 
-    protected override void Update(GameTime gameTime)
+    protected override async void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
             Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
-        _updateTask = new Task(OnBeforeFrame);
+        var token = _tokenSource.Token;
         
+        if (_isFirstFrame)
+        {
+            await Task.Run(() => OnBeforeFirstFrame?.Invoke(token), token);
+            if (token.IsCancellationRequested)
+                return;
+            
+            LoadContent();
+            _isFirstFrame = false;
+        }
+        
+        await Task.Run(() => OnBeforeFrame?.Invoke(token), token);
+        if (token.IsCancellationRequested)
+            return;
         base.Update(gameTime);
     }
 
@@ -82,6 +95,15 @@ public class MainRenderEngine : Game
     public static void UnRegisterObject(IRenderObject renderable)
     {
         _renderObjects.Remove(renderable);
+    }
+
+    public void RestFrame()
+    {
+        UnloadContent();
+        _tokenSource.Cancel();
+        _renderObjects.Clear();
+        _isFirstFrame = true;
+        _tokenSource = new CancellationTokenSource();
     }
 
     protected override void OnExiting(object sender, EventArgs args)

@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Voyage_Engine.Assest.Scenes;
 
 namespace Voyage_Engine.Game_Engine.SceneSystem
 {
     public static class SceneManager
     {
+        public static event Action OnLoadedNewScne;
+        
         private static List<Scene> _scenes = new List<Scene>()
         {
             new MainScene(),
-            new NewScene()
         };
 
         private static Scene _currentScene;
@@ -72,7 +74,8 @@ namespace Voyage_Engine.Game_Engine.SceneSystem
             }
             
             _currentScene = _scenes[_sceneIndex];
-            _currentScene.StartScene();
+            //_currentScene.StartScene();
+            OnLoadedNewScne?.Invoke();
         }
 
         public static void SetSceneByIndex(int sceneIndex) //set scene by index 
@@ -86,8 +89,9 @@ namespace Voyage_Engine.Game_Engine.SceneSystem
             _sceneIndex = sceneIndex;
             
             _currentScene = _scenes[_sceneIndex];
-            _currentScene.StartScene();
-            
+           // _currentScene.StartScene();
+            OnLoadedNewScne?.Invoke();
+
             Debug.Log(_currentScene.Name);
         }
 

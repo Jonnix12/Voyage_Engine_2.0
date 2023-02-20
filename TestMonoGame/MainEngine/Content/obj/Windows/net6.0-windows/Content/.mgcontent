@@ -4,9 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jonha/Documents/GitHub/Unity/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/ball.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/ball.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/png-transparent-the-woman-warrior-female-woman-warrior-game-child-cg-artwork-thumbnail.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Solid_white.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

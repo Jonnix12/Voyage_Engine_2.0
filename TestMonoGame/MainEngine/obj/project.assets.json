@@ -7525,19 +7525,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jonha\\.nuget\\packages\\": {}
+    "C:\\Users\\jonharel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonha\\Documents\\GitHub\\Unity\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
+      "projectUniqueName": "D:\\Unity Projects\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
       "projectName": "Voage_Engine",
-      "projectPath": "C:\\Users\\jonha\\Documents\\GitHub\\Unity\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
-      "packagesPath": "C:\\Users\\jonha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jonha\\Documents\\GitHub\\Unity\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\obj\\",
+      "projectPath": "D:\\Unity Projects\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
+      "packagesPath": "C:\\Users\\jonharel\\.nuget\\packages\\",
+      "outputPath": "D:\\Unity Projects\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jonha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jonharel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7583,24 +7588,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

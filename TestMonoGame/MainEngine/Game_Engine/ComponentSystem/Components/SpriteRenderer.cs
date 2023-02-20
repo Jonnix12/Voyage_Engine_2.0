@@ -11,5 +11,4 @@ public class SpriteRenderer : RenderObject
         Path = path;
         Layer = layer;
     }
-    
 }

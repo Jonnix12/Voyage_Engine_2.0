@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Voyage_Engine.Game_Engine.ResourcesSystem
 {
-    public sealed class Resources
+    public sealed class Resources//not implemented
     {
         private static string ResourcesPath;
         private static FileStream _fileStream;

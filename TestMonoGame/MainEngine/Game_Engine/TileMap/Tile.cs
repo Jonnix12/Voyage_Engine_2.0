@@ -8,17 +8,19 @@ namespace Voyage_Engine.Game_Engine.TileMap
     public class Tile : RenderObject
     {
         protected override string Path { get; }
-        public int Row { get; private set; }
-        public int Colm { get; private set; }
         
         private Vector2 _size;
         private Vector2 _pos;
         private Color _color;
         private GameObject _tileObject;
 
+        public bool IsHaveValue => _tileObject != null;
+        public int Row { get; private set; }
+        public int Colm { get; private set; }
+
         public Tile(int row,int colm,Vector2 pos,Vector2 size,Color color)
         {
-            Path = "ball";
+            Path = "Solid_white";
             Row = row;
             Colm = colm;
             _pos = pos;
@@ -43,7 +45,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
 
         public override void Render(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture2D,new Vector2(_pos.X,_pos.Y),Color.White);//plaster!!!
+            spriteBatch.Draw(_texture2D,new Vector2(_pos.X,_pos.Y),_color);//plaster!!!
         }
 
         public GameObject RemoveTileObject()

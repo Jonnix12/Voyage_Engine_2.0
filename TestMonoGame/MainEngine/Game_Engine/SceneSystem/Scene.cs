@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Voyage_Engine.Game_Engine.TransformSystem;
 
 namespace Voyage_Engine.Game_Engine.SceneSystem
@@ -19,16 +20,15 @@ namespace Voyage_Engine.Game_Engine.SceneSystem
             _rootTransform = new Transform();
         }
         
-        public virtual void StartScene() //start scene
+        public virtual void StartScene(CancellationToken cancellationToken) //start scene
         {
-            StartChildren(RootTransform);
+            StartChildren(RootTransform,cancellationToken);
             IsLoaded = true;
         }
 
-        public virtual void UpdateScene() //update scene
+        public virtual void UpdateScene(CancellationToken cancellationToken) //update scene
         {
-            UpdateChildren(RootTransform);
-            
+            UpdateChildren(RootTransform,cancellationToken);
         }
 
         public virtual void EndScene() //end scene
@@ -37,28 +37,34 @@ namespace Voyage_Engine.Game_Engine.SceneSystem
             IsLoaded = false;
         }
         
-        private void StartChildren(Transform transform)
+        private void StartChildren(Transform transform,CancellationToken cancellationToken)
         {
             foreach (var child in transform.Children)
             {
                 child.GameObject.Start();
                 
+                if (cancellationToken.IsCancellationRequested)
+                    return;
+
                 if (child.HaveChildren)
                 {
-                    StartChildren(child);
+                    StartChildren(child,cancellationToken);
                 }
             }
         }
         
-        private  void UpdateChildren(Transform transform)
+        private  void UpdateChildren(Transform transform,CancellationToken cancellationToken)
         {
             foreach (var child in transform.Children)
             {
                 child.GameObject.Update();
                 
+                if (cancellationToken.IsCancellationRequested)
+                    return;
+
                 if (child.HaveChildren)
                 {
-                    UpdateChildren(child);
+                    UpdateChildren(child,cancellationToken);
                 }
             }
         }

@@ -11,7 +11,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
         private int width;
         private int height;
 
-        public TileMap(int width, int height,Vector2 tileSize)
+        public TileMap(int width, int height, Vector2 tileSize)
         {
             this.width = width;
             this.height = height;
@@ -19,22 +19,21 @@ namespace Voyage_Engine.Game_Engine.TileMap
 
             float posX = 0;
             float posY = 0;
-            
+
             Color color = Color.Wheat;
-            
+
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
-                    _gride[i, j] = new Tile(i,j,new Vector2(posX,posY),tileSize,color);
+                    _gride[i, j] = new Tile(i, j, new Vector2(posX, posY), tileSize, color);
 
-                    if (j < height -1)
+                    if (j < height - 1)
                     {
                         color = color == Color.Wheat ? Color.Brown : Color.Wheat;
                     }
-                    
+
                     posY += tileSize.Y;
-                    
                 }
 
                 posY = 0;
@@ -52,7 +51,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
         {
             for (int width = 0; this.width < width; width++)
             {
-                for (int height = 0;this.height < height; height++)
+                for (int height = 0; this.height < height; height++)
                 {
                     yield return _gride[width, height];
                 }
@@ -78,7 +77,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
             bool isGoingDown = false;
 
             while (currentRow >= minWidth && currentRow <= maxWidth &&
-                currentCol >= minHeight && currentCol <= maxHeight)
+                   currentCol >= minHeight && currentCol <= maxHeight)
             {
                 yield return _gride[currentRow, currentCol];
 
@@ -107,40 +106,4 @@ namespace Voyage_Engine.Game_Engine.TileMap
             }
         }
     }
-    //public class Tilemap : IEnumerable<Tile> 
-    //    {
-    //        private Tile[,] _gride;
-    //        private int width;
-    //        private int height;
-
-    //        public Tilemap(int width, int height)
-    //        {
-    //            this.width = width;
-    //            this.height = height;
-    //             _gride = new Tile[width, height];
-    //        }
-
-    //        public Tile this[int x, int y]
-    //        {
-    //            get { return _gride[x, y]; }
-    //            set { _gride[x, y] = value; }
-    //        }
-
-    //        public IEnumerator<Tile> GetEnumerator()
-    //        {
-    //            for (int x = 0; x < width; x++)
-    //            {
-    //                for (int y = 0; y < height; y++)
-    //                {
-    //                    yield return _gride[x, y];
-    //                }
-    //            }
-    //        }
-
-    //        IEnumerator IEnumerable.GetEnumerator()
-    //        {
-    //            return GetEnumerator();
-    //        }
-    //    }
-
 }
