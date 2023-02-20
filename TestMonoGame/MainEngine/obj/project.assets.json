@@ -7525,19 +7525,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\liadh\\.nuget\\packages\\": {}
+    "C:\\Users\\jonharel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\liadh\\מסמכים\\C#\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
+      "projectUniqueName": "D:\\Unity Projects\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
       "projectName": "Voage_Engine",
-      "projectPath": "C:\\Users\\liadh\\מסמכים\\C#\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
-      "packagesPath": "C:\\Users\\liadh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\liadh\\מסמכים\\C#\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\obj\\",
+      "projectPath": "D:\\Unity Projects\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\MainEngine.csproj",
+      "packagesPath": "C:\\Users\\jonharel\\.nuget\\packages\\",
+      "outputPath": "D:\\Unity Projects\\Voyage_Engine_2.0\\TestMonoGame\\MainEngine\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\liadh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jonharel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

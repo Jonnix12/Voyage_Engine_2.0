@@ -35,7 +35,8 @@ public abstract class RenderObject : Component, IRenderObject
 
     public virtual void Render(SpriteBatch spriteBatch)
     {
-        spriteBatch.Draw(_texture2D,new Vector2(Transform.Position.X,Transform.Position.Y),Color.White);//plaster!!!
+        Vector2 position = new Vector2(Transform.Position.X, Transform.Position.Y);
+        spriteBatch.Draw(_texture2D,position,new Rectangle((int)position.X,(int)position.Y,(int)Transform.Scale.X,(int)Transform.Scale.X),Color.White);
     }
 
     public int CompareTo(int other)

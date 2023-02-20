@@ -13,4 +13,9 @@ public class BoardDataHandler
     {
         _boardGride = boardGride;
     }
+
+    public void MovePlayer(int colum, int raw, int newColum, int newRaw)
+    {
+        
+    }
 }

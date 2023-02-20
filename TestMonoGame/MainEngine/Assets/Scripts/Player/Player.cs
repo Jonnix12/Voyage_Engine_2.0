@@ -49,5 +49,4 @@ public class Player : GameObject , ITurnActor
 
         _checkersPocs.Remove(checkersPoc);
     }
-
 }
