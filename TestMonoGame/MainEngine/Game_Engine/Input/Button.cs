@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using Voyage_Engine.Game_Engine.ComponentSystem;
 using Voyage_Engine.Game_Engine.ComponentSystem.Components;
+using Voyage_Engine.Game_Engine.GameObjectSystem;
 
 namespace Voyage_Engine.Game_Engine.InputSystem
 {
@@ -18,16 +19,13 @@ namespace Voyage_Engine.Game_Engine.InputSystem
         private bool _isHovering;
         private SpriteRenderer _spriteRenderer;
 
-        public event Action Click;
+        public event Action<GameObject> Click;
 
         public Rectangle Rectangle
         {
             get
             {
-                Vector2 offset = new Vector2(_spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height);
-                return new Rectangle((int)Transform.Position.X - (int)offset.X,
-                    (int)Transform.Position.Y - (int)offset.Y,
-                   _spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height);
+                return new Rectangle((int)Transform.Position.X, (int)Transform.Position.Y, _spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height);
             }
         }
 
@@ -52,7 +50,7 @@ namespace Voyage_Engine.Game_Engine.InputSystem
 
                 if (_currentMouseState.LeftButton == ButtonState.Released && _previousMouse.LeftButton == ButtonState.Pressed)
                 {
-                    Click?.Invoke();
+                    Click?.Invoke(GameObject);
                 }
             }
             else
