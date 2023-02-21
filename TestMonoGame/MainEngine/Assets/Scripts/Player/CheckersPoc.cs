@@ -10,6 +10,6 @@ public class CheckersPoc : Component
 
     public CheckersPoc(int id)
     {
-        
+        _id = id;
     }
 }

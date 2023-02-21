@@ -10,10 +10,4 @@ public class BlackPlayerGameObject : GameObject
     {
         AddComponent<Player, string, int>("Black Player", 2);
     }
-    
-    public override void Start()
-    { 
-       
-        base.Start();
-    }
 }

@@ -21,6 +21,8 @@ public class GameDataHandler : GameObject
     public GameDataHandler()
     {
         _boardHandler = new BoardHandler();
+
+        _boardHandler.OnPocEatnd += PocEatend;
         
         _playersHandler = new PlayersHandler();
 
@@ -44,6 +46,11 @@ public class GameDataHandler : GameObject
         base.Start();
     }
 
+    private void PocEatend(Tile tile)
+    {
+        Debug.Log($"eAT!!! {tile.Colm} {tile.Row}");
+    }
+
     private void BoardClick(GameObject gameObject)
     {
         
@@ -58,20 +65,31 @@ public class GameDataHandler : GameObject
             }
             else
             {
-                if (SelectedTile.IsHaveValue)
+                if (tile.IsHaveValue)
                     return;
+
+                if (_boardHandler.MovePoc(SelectedTile.Colm, SelectedTile.Row, tile.Colm, tile.Row,
+                        SelectedTile.TileObject.GetComponent<CheckersPoc>().Id))
+                {
+                    //do sutff
+                }
                 
-                _boardHandler.MovePoc(SelectedTile.Colm,SelectedTile.Row,tile.Colm,tile.Row,SelectedTile.TileObject.GetComponent<CheckersPoc>().Id);
+                _playerSelect.ReleaseTile();
             }
         }
         else
         {
+            if (!tile.IsHaveValue)
+                return;
+            
             _playerSelect.SelectTile(tile);
         }
     }
 
     ~GameDataHandler()
     {
+        _boardHandler.OnPocEatnd -= PocEatend;
+
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)

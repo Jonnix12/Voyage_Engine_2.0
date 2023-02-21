@@ -10,6 +10,6 @@ public class BlackCheckersPocGameObject : GameObject
     {
         AddComponent<SpriteRenderer,string,int>("Sprites/dog",0);
         AddComponent<Button>();
-        AddComponent<CheckersPoc, int>(1);
+        AddComponent<CheckersPoc, int>(2);
     }
 }

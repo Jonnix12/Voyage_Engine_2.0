@@ -7,6 +7,5 @@ public class WhitePlayerGameObject : GameObject
     public WhitePlayerGameObject()
     {
         AddComponent<Player, string, int>("White Player", 1);
-
     }
 }

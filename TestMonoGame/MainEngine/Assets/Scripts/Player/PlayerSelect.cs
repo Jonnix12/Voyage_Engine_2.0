@@ -13,9 +13,6 @@ public class PlayerSelect : Component
     
     public void SelectTile(Tile checkersPoc)
     {
-        if (_selectedTile == null)
-            return;
-        
         _selectedTile = checkersPoc;
     }
 
