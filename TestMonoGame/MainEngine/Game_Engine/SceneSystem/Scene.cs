@@ -39,32 +39,36 @@ namespace Voyage_Engine.Game_Engine.SceneSystem
         
         private void StartChildren(Transform transform,CancellationToken cancellationToken)
         {
-            foreach (var child in transform.Children)
+            var child = transform.Children;
+            
+            for (int i = 0; i < child.Count; i++)
             {
-                child.GameObject.Start();
+                child[i].GameObject.Start();
                 
                 if (cancellationToken.IsCancellationRequested)
                     return;
 
-                if (child.HaveChildren)
+                if (child[i].HaveChildren)
                 {
-                    StartChildren(child,cancellationToken);
+                    StartChildren(child[i],cancellationToken);
                 }
             }
         }
         
         private  void UpdateChildren(Transform transform,CancellationToken cancellationToken)
         {
-            foreach (var child in transform.Children)
+            var child = transform.Children;
+            
+            for (int i = 0; i < child.Count; i++)
             {
-                child.GameObject.Update();
+                child[i].GameObject.Update();
                 
                 if (cancellationToken.IsCancellationRequested)
                     return;
 
-                if (child.HaveChildren)
+                if (child[i].HaveChildren)
                 {
-                    UpdateChildren(child,cancellationToken);
+                    UpdateChildren(child[i],cancellationToken);
                 }
             }
         }

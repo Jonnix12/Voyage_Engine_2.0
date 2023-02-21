@@ -17,18 +17,24 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
         public string Name => _name;
         public Transform Transform => _transform;
         public bool IsActive => _isActive;
-        
-        public GameObject GameObjectConstructor(Transform transform,string name)
+
+        public GameObject()
         {
             InitializedBaseObject();
 
             _components = new List<IComponent>();
-            
+        }
+        
+        public GameObject GameObjectConstructor(Transform transform,string name)
+        {
             transform.SetGameObject(this);
-
+          
             _name = name;
 
             _transform = transform;
+            
+            foreach (var component in _components)
+                component.InitComponent(this);
 
             return this;
         }
@@ -50,6 +56,7 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
         {
             TComponent component = new TComponent();
             
+            component.InitComponent(this);
             _components.Add(component);
 
             return component;
@@ -78,6 +85,22 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
             
             return AddComponent<TComponent>(parameterTyps, parameters);
         }
+        
+        public TComponent AddComponent<TComponent,T1,T2,T3,T4>(T1 parameter1,T2 parameter2,T3 parameter3,T4 parameter4) where TComponent : IComponent
+        {
+            var parameterTyps = new[] { typeof(T1) ,typeof(T2),typeof(T3),typeof(T4) };
+            var parameters = new object[] { parameter1 , parameter2,parameter3,parameter4};
+            
+            return AddComponent<TComponent>(parameterTyps, parameters);
+        }
+        
+        public TComponent AddComponent<TComponent,T1,T2,T3,T4,T5>(T1 parameter1,T2 parameter2,T3 parameter3,T4 parameter4, T5 parameter5) where TComponent : IComponent
+        {
+            var parameterTyps = new[] { typeof(T1) ,typeof(T2),typeof(T3),typeof(T4) ,typeof(T5)};
+            var parameters = new object[] { parameter1 , parameter2,parameter3,parameter4,parameter5};
+            
+            return AddComponent<TComponent>(parameterTyps, parameters);
+        }
 
         private TComponent AddComponent<TComponent>(Type[] parameterTyps, object[] parameters) where TComponent : IComponent
         {
@@ -88,7 +111,7 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
                 throw new Exception("Cant get the component constructor that match the inserted parameters");
 
             TComponent component = (TComponent)typeConstructor.Invoke(parameters);
-
+            component.InitComponent(this);
             _components.Add(component);
             return component;
         }
@@ -106,8 +129,7 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
 
         public virtual void Start()
         {
-            foreach (var component in _components)
-                component.InitComponent(this);
+            
         }
 
         public void Update()

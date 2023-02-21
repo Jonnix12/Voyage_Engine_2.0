@@ -13,6 +13,7 @@ public abstract class RenderObject : Component, IRenderObject
     public Texture2D Texture2D => _texture2D;
 
     protected abstract string Path { get; }
+    protected abstract Color Color { get; }
     public int Layer { get; set; }
 
     protected RenderObject()
@@ -36,7 +37,7 @@ public abstract class RenderObject : Component, IRenderObject
     public virtual void Render(SpriteBatch spriteBatch)
     {
         Vector2 position = new Vector2(Transform.Position.X, Transform.Position.Y);
-        spriteBatch.Draw(_texture2D,position,new Rectangle((int)position.X,(int)position.Y,(int)Transform.Scale.X,(int)Transform.Scale.X),Color.White);
+        spriteBatch.Draw(_texture2D,new Rectangle(new Point((int)Transform.Position.X, (int)Transform.Position.Y),new Point((int)Transform.Scale.X, (int)Transform.Scale.Y)),Color);
     }
 
     public int CompareTo(int other)

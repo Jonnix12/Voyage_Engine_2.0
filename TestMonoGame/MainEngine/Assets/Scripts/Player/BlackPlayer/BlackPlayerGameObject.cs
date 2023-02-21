@@ -3,12 +3,17 @@ using Voyage_Engine.Game_Engine.GameObjectSystem;
 
 namespace Voyage_Engine.Game_Engine.Objects.Scripts;
 
-public class BlackPlayer : GameObject
+public class BlackPlayerGameObject : GameObject
 {
+
+    public BlackPlayerGameObject()
+    {
+        AddComponent<Player, string, int>("Black Player", 2);
+    }
+    
     public override void Start()
     { 
-        AddComponent<Player, string, int>("White Player", 2);
-        AddComponent<CheckersPoc, int>(2);
+       
         base.Start();
     }
 }

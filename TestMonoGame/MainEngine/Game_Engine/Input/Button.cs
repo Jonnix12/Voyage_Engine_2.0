@@ -10,14 +10,13 @@ using Voyage_Engine.Game_Engine.GameObjectSystem;
 
 namespace Voyage_Engine.Game_Engine.InputSystem
 {
-    public class Button : Component, IDisposable
+    public class Button : Component
     {
         private MouseState _currentMouseState;
         private MouseState _previousMouse;
-
-
+        
         private bool _isHovering;
-        private SpriteRenderer _spriteRenderer;
+        private bool _isClicked;
 
         public event Action<GameObject> Click;
 
@@ -25,13 +24,12 @@ namespace Voyage_Engine.Game_Engine.InputSystem
         {
             get
             {
-                return new Rectangle((int)Transform.Position.X, (int)Transform.Position.Y, _spriteRenderer.Texture2D.Width, _spriteRenderer.Texture2D.Height);
+                return new Rectangle((int)Transform.Position.X, (int)Transform.Position.Y, (int)Transform.Scale.X, (int)Transform.Scale.Y);
             }
         }
 
-        public Button(SpriteRenderer spriteRenderer)
+        public Button()
         {
-            _spriteRenderer = spriteRenderer;
         }
 
         public override void UpdateComponent()
@@ -48,9 +46,10 @@ namespace Voyage_Engine.Game_Engine.InputSystem
                     OnTriggerEnter();
                 }
 
-                if (_currentMouseState.LeftButton == ButtonState.Released && _previousMouse.LeftButton == ButtonState.Pressed)
+                if (_currentMouseState.LeftButton == ButtonState.Released && _previousMouse.LeftButton == ButtonState.Pressed && !_isClicked)
                 {
                     Click?.Invoke(GameObject);
+                    _isClicked = true;
                 }
             }
             else
@@ -64,6 +63,7 @@ namespace Voyage_Engine.Game_Engine.InputSystem
 
         private void OnTriggerEnter()
         {
+            _isClicked = false;
             _isHovering = true;
         }
 

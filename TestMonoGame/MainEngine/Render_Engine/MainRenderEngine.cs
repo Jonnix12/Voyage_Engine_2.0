@@ -34,6 +34,16 @@ public class MainRenderEngine : Game
         _tokenSource = new CancellationTokenSource();
     }
 
+    protected override void Initialize()
+    {
+        _graphics.IsFullScreen = false;
+        _graphics.PreferredBackBufferWidth = 1920;
+        _graphics.PreferredBackBufferHeight = 1080;
+        _graphics.ApplyChanges();
+        
+        base.Initialize();
+    }
+
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);

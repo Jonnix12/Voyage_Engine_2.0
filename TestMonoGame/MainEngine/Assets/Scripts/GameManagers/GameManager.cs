@@ -1,4 +1,6 @@
-﻿namespace Voyage_Engine.Game_Engine.Objects.Scripts;
+﻿using Voyage_Engine.Game_Engine.FactorySystem;
+
+namespace Voyage_Engine.Game_Engine.Objects.Scripts;
 
 public class GameManager
 {
@@ -7,7 +9,7 @@ public class GameManager
     
     public GameManager()
     {
-        _dataHandler = new GameDataHandler();
+        _dataHandler = (GameDataHandler)Factory.Instantiate<GameDataHandler>();
         _uiHandler = new GameUIHandler();
     }
 }
