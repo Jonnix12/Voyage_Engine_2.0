@@ -32,6 +32,19 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
 
             return this;
         }
+
+        public T GetComponent<T>() where T : class , IComponent 
+        {
+            foreach (var component in _components)
+            {
+                if (component is T foundComponent)
+                {
+                    return foundComponent;
+                }
+            }
+
+            return null;
+        }
         
         public TComponent AddComponent<TComponent>() where TComponent : IComponent , new()
         {
@@ -97,13 +110,13 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
                 component.InitComponent(this);
         }
 
-        public virtual void Update()
+        public void Update()
         {
             foreach (var component in _components)
                 component.UpdateComponent();
         }
 
-        public virtual void LateUpdate()
+        public void LateUpdate()
         {
             
         }

@@ -8,11 +8,13 @@ namespace Voyage_Engine.Game_Engine.TileMap
     public class Tile : RenderObject
     {
         protected override string Path { get; }
-        
+
         private Vector2 _size;
         private Vector2 _pos;
         private Color _color;
         private GameObject _tileObject;
+
+        public GameObject TileObject => _tileObject;
 
         public bool IsHaveValue => _tileObject != null;
         public int Row { get; private set; }

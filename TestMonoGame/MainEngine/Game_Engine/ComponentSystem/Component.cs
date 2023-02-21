@@ -16,7 +16,7 @@ namespace Voyage_Engine.Game_Engine.ComponentSystem
         {
         }
 
-        public virtual void InitComponent(GameObject gameObject)
+        public void InitComponent(GameObject gameObject)
         {
             InitializedBaseObject();
             

@@ -1,52 +1,48 @@
 ﻿using System.Collections.Generic;
+using Voyage_Engine.Game_Engine.ComponentSystem;
 using Voyage_Engine.Game_Engine.FactorySystem;
-using Voyage_Engine.Game_Engine.GameObjectSystem;
-using Voyage_Engine.Game_Engine.Objects.Scripts.TurnSystem;
+using Voyage_Engine.Game_Engine.Objects.Scripts;
 
-namespace Voyage_Engine.Game_Engine.Objects.Scripts;
+namespace Voage_Engine.Assets.Scripts.Player;
 
-public class Player : GameObject , ITurnActor
+public class Player : Component
 {
     private int _playerID;
     private string _playerName;
 
-    public bool IsCurrentTurn { get; set; }
+   
     public int PlayerId => _playerID;
 
     public string PlayerName => _playerName;
 
-    private List<CheckersPoc> _checkersPocs;
+    private List<CheckersPocGameObject> _checkersPocs;
 
-    public List<CheckersPoc> CheckersPocs => _checkersPocs;
+    public List<CheckersPocGameObject> CheckersPocs => _checkersPocs;
 
-    public Player(int playerId, string playerName)
+    public Player(string playerName,int playerId)
     {
-        _playerID = playerId;
         _playerName = playerName;
-
-        _checkersPocs = new List<CheckersPoc>(12);
+        _playerID = playerId;
+        
+        _checkersPocs = new List<CheckersPocGameObject>(12);
 
         for (int i = 0; i < _checkersPocs.Count; i++)
         {
-            _checkersPocs[i] = (CheckersPoc)Factory.Instantiate<CheckersPoc>();
+            _checkersPocs[i] = (CheckersPocGameObject)Factory.Instantiate<CheckersPocGameObject>();
         }
     }
 
-    public override void Update()
+    public override void UpdateComponent()
     {
-        if (IsCurrentTurn)
-        {
-            //doStuff
-        }
-        
-        base.Update();
+      
+        base.UpdateComponent();
     }
-
-    public void RemoveCheckersPoc(CheckersPoc checkersPoc)
+    
+    public void RemoveCheckersPoc(CheckersPocGameObject checkersPocGameObject)
     {
-        if (!_checkersPocs.Contains(checkersPoc))
+        if (!_checkersPocs.Contains(checkersPocGameObject))
             return;
 
-        _checkersPocs.Remove(checkersPoc);
+        _checkersPocs.Remove(checkersPocGameObject);
     }
 }

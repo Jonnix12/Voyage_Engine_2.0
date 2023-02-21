@@ -1,8 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Voyage_Engine.Game_Engine.ComponentSystem.Components;
+﻿using Voyage_Engine.Game_Engine.ComponentSystem.Components;
 using Voyage_Engine.Game_Engine.GameObjectSystem;
 using Voyage_Engine.Game_Engine.InputSystem;
-using Voyage_Engine.Game_Engine.TransformSystem;
 
 namespace Voyage_Engine.Game_Engine.Objects
 {
@@ -14,13 +12,6 @@ namespace Voyage_Engine.Game_Engine.Objects
             AddComponent<Button, SpriteRenderer>(spriteRenderer);
             Debug.Log("Hey form start");
             base.Start();
-        }
-
-        public override void Update()
-        {
-            Debug.Log("Hey form Update");
-
-            base.Update();
         }
     }
 }

@@ -1,15 +1,15 @@
-﻿using Voyage_Engine.Game_Engine.ComponentSystem.Components;
-using Voyage_Engine.Game_Engine.GameObjectSystem;
-using Voyage_Engine.Game_Engine.InputSystem;
+﻿using Voyage_Engine.Game_Engine.ComponentSystem;
 
-namespace Voyage_Engine.Game_Engine.Objects.Scripts;
+namespace Voage_Engine.Assets.Scripts.Player;
 
-public class CheckersPoc : GameObject
+public class CheckersPoc : Component
 {
-    public override void Start()
+    private int _id;
+
+    public int Id => _id;
+
+    public CheckersPoc(int id)
     {
-        var spriteRender = AddComponent<SpriteRenderer,string,int>("ball",0);
-        AddComponent<Button,SpriteRenderer>(spriteRender);
-        base.Start();
+        
     }
 }
