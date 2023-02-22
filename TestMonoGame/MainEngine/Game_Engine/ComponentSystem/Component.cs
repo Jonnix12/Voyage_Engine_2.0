@@ -14,6 +14,9 @@ namespace Voyage_Engine.Game_Engine.ComponentSystem
 
         public virtual void Dispose()
         {
+            _gameObject.RemoveComponent(this);
+            _gameObject = null;
+            _transform = null;
         }
 
         public void InitComponent(GameObject gameObject)

@@ -40,5 +40,11 @@ public class Player : Component
             }
         }
     }
+
+    public void RemovePoc(CheckersPoc poc)
+    {
+        _checkersPocs.Remove(poc);
+        poc.GameObject.Dispose();
+    }
     
 }

@@ -13,7 +13,7 @@ public abstract class RenderObject : Component, IRenderObject
     public Texture2D Texture2D => _texture2D;
 
     protected abstract string Path { get; }
-    protected abstract Color Color { get; }
+    protected abstract Color Color { get; set; }
     public int Layer { get; set; }
 
     protected RenderObject()

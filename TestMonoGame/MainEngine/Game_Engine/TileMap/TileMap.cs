@@ -10,8 +10,8 @@ namespace Voyage_Engine.Game_Engine.TileMap
 {
     public class TileMap : IEnumerable<GameObject>
     {
-        private Vector2 _pos;
-        private GameObject[,] _gride;
+        private GameObject[,] _grid;
+        
         private readonly int _column;
         private readonly int _raw;
 
@@ -19,7 +19,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
         {
             _column = column;
             _raw = raw;
-            _gride = new GameObject[column, raw];
+            _grid = new GameObject[column, raw];
 
             float posX = 0;
             float posY = 0;
@@ -36,7 +36,7 @@ namespace Voyage_Engine.Game_Engine.TileMap
                     tileGameObject.AddComponent<SpriteRenderer, string, int,Color>("Solid_white",0,color);
                     tileGameObject.AddComponent<Button>();
                     
-                    _gride[i, j] = tileGameObject;
+                    _grid[i, j] = tileGameObject;
 
                     if (j < raw - 1)
                     {
@@ -51,19 +51,15 @@ namespace Voyage_Engine.Game_Engine.TileMap
             }
         }
 
-        public GameObject this[int x, int y]
-        {
-            get => _gride[x, y];
-            set => _gride[x, y] = value;
-        }
+        public GameObject this[int x, int y] => _grid[x, y];
 
         public IEnumerator<GameObject> GetEnumerator()
         {
-            for (int width = 0; _column < width; width++)
+            for (int width = 0; width < _column; width++)
             {
-                for (int height = 0; _raw < height; height++)
+                for (int height = 0; height < _raw; height++)
                 {
-                    yield return _gride[width, height];
+                    yield return _grid[width, height];
                 }
             }
         }
@@ -71,49 +67,6 @@ namespace Voyage_Engine.Game_Engine.TileMap
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
-
-        public IEnumerator<GameObject> GetEnumerator(int row, int col)
-        {
-            int minWidth = row - 1;
-            int minHeight = col - 1;
-            int maxWidth = row + 1;
-            int maxHeight = col + 1;
-
-            int currentRow = maxWidth;
-            int currentCol = maxHeight;
-
-            bool isGoingRight = true;
-            bool isGoingDown = false;
-
-            while (currentRow >= minWidth && currentRow <= maxWidth &&
-                   currentCol >= minHeight && currentCol <= maxHeight)
-            {
-                yield return _gride[currentRow, currentCol];
-
-                if (isGoingRight)
-                {
-                    currentCol++;
-                    if (currentCol > maxHeight)
-                    {
-                        isGoingRight = false;
-                        isGoingDown = true;
-                        currentCol--;
-                        currentRow++;
-                    }
-                }
-                else if (isGoingDown)
-                {
-                    currentRow++;
-                    if (currentRow > maxWidth)
-                    {
-                        isGoingRight = true;
-                        isGoingDown = false;
-                        currentRow--;
-                        currentCol--;
-                    }
-                }
-            }
         }
     }
 }

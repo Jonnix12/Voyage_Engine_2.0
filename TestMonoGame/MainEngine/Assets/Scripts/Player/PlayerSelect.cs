@@ -11,15 +11,17 @@ public class PlayerSelect : Component
 
     public bool IsTileSelected => _selectedTile != null;
     
-    public void SelectTile(Tile checkersPoc)
+    public void SelectTile(Tile tile)
     {
-        _selectedTile = checkersPoc;
+        tile.SetToSelected();
+        _selectedTile = tile;
     }
 
     public Tile ReleaseTile()
     {
         var cache = _selectedTile;
         _selectedTile = null;
+        cache.SetToDeSelected();
         return cache;
     }
 }

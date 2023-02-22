@@ -28,6 +28,10 @@ public class GameDataHandler : GameObject
 
         _playerSelect = new PlayerSelect();
 
+        Player[] players = new[] {_playersHandler.WhitePlayer, _playersHandler.BlackPlayer};
+
+        _turnManager = new TurnManager(players);
+
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -49,13 +53,28 @@ public class GameDataHandler : GameObject
     private void PocEatend(Tile tile)
     {
         Debug.Log($"eAT!!! {tile.Colm} {tile.Row}");
+
+        var poc = tile.TileObject.GetComponent<CheckersPoc>();
+
+        switch (poc.Id)
+        {
+            case 1:
+                tile.RemoveTileObject();
+                _playersHandler.WhitePlayer.RemovePoc(poc);
+                break;
+            case 2:
+                tile.RemoveTileObject();
+                _playersHandler.WhitePlayer.RemovePoc(poc);
+                break;
+        }
+
     }
 
     private void BoardClick(GameObject gameObject)
     {
-        
         var tile = gameObject.GetComponent<Tile>();
-        Debug.Log(tile.Colm + " " +tile.Row);
+
+        
 
         if (_playerSelect.IsTileSelected)
         {
@@ -71,7 +90,7 @@ public class GameDataHandler : GameObject
                 if (_boardHandler.MovePoc(SelectedTile.Colm, SelectedTile.Row, tile.Colm, tile.Row,
                         SelectedTile.TileObject.GetComponent<CheckersPoc>().Id))
                 {
-                    //do sutff
+                    _turnManager.MoveToNextTurn();
                 }
                 
                 _playerSelect.ReleaseTile();
@@ -80,6 +99,9 @@ public class GameDataHandler : GameObject
         else
         {
             if (!tile.IsHaveValue)
+                return;
+            
+            if (_turnManager.CurrentPlayer.PlayerId != tile.TileObject.GetComponent<CheckersPoc>().Id)
                 return;
             
             _playerSelect.SelectTile(tile);

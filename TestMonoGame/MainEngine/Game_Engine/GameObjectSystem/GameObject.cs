@@ -116,6 +116,11 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
             return component;
         }
 
+        public void RemoveComponent(Component component)
+        {
+            _components.Remove(component);
+        }
+
         public void SetActive(bool isActive)
         {
             //need active logic
@@ -145,8 +150,12 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
 
         public void Dispose()
         {
-            foreach (var component in _components)
-                component.Dispose();
+            for (int i = 0; i < _components.Count; i++)
+            {
+                _components[i].Dispose();
+            }
+            // foreach (var component in _components)
+            //     component.Dispose();
         }
     }
 }

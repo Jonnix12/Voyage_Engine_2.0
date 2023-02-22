@@ -1,5 +1,7 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 using Voyage_Engine.Game_Engine.ComponentSystem;
+using Voyage_Engine.Game_Engine.ComponentSystem.Components;
 using Voyage_Engine.Game_Engine.GameObjectSystem;
 
 namespace Voyage_Engine.Game_Engine.TileMap;
@@ -7,6 +9,8 @@ namespace Voyage_Engine.Game_Engine.TileMap;
 public class Tile : Component, IEquatable<Tile>
 {
     private GameObject _tileObject;
+
+    private SpriteRenderer _spriteRenderer;
 
     public GameObject TileObject => _tileObject;
 
@@ -33,6 +37,18 @@ public class Tile : Component, IEquatable<Tile>
         _tileObject.Transform.Scale = Transform.Scale * 0.75f;
 
         return true;
+    }
+
+    public void SetToSelected()
+    {
+        _spriteRenderer ??= GameObject.GetComponent<SpriteRenderer>();
+
+        _spriteRenderer.SetColor(Color.Red);
+    }
+    
+    public void SetToDeSelected()
+    {
+        _spriteRenderer.SetColor(Color.White);
     }
 
     public GameObject RemoveTileObject()
