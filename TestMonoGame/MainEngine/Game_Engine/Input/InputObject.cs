@@ -14,6 +14,7 @@ public class InputObject : Component
     private bool _isHovering;
     private MouseState _previousMouse;
 
+
     public Rectangle Rectangle => new Rectangle((int) Transform.Position.X, (int) Transform.Position.Y,
         (int) Transform.Scale.X, (int) Transform.Scale.Y);
 

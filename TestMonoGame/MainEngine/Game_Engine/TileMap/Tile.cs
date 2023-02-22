@@ -29,7 +29,12 @@ public class Tile : Component, IEquatable<Tile>
         return other.Row == Row && other.Colm == Colm;
     }
 
-    public bool TryAssiagGameObject(GameObject gameObject)
+    /// <summary>
+    /// Try to insert the gameobject under the tile, return if it happend
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <returns></returns>
+    public bool TryAssignGameObject(GameObject gameObject)
     {
         if (TileObject != null) return false;
 

@@ -25,6 +25,10 @@ public abstract class RenderObject : Component, IRenderObject
         _texture2D = contentManager.Load<Texture2D>(Path);
     }
 
+    /// <summary>
+    /// Draw the sprite and match it to the GameObject position and scale
+    /// </summary>
+    /// <param name="spriteBatch"></param>
     public virtual void Render(SpriteBatch spriteBatch)
     {
         var position = new Vector2(Transform.Position.X, Transform.Position.Y);

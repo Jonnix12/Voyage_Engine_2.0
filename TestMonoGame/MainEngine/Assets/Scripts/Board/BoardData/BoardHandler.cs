@@ -33,7 +33,7 @@ public class BoardHandler
             return false;
 
         var gameObject = tile.RemoveTileObject();
-        TileMap[newColum, newRaw].GetComponent<Tile>().TryAssiagGameObject(gameObject);
+        TileMap[newColum, newRaw].GetComponent<Tile>().TryAssignGameObject(gameObject);
         return true;
     }
 
@@ -92,7 +92,7 @@ public class BoardHandler
                 if (tile.IsHaveValue)
                     return;
 
-                tile.TryAssiagGameObject(checkersPocs[count].GameObject);
+                tile.TryAssignGameObject(checkersPocs[count].GameObject);
                 count++;
             }
 
@@ -114,7 +114,7 @@ public class BoardHandler
                 if (tile.IsHaveValue)
                     return;
 
-                tile.TryAssiagGameObject(checkersPocs[count].GameObject);
+                tile.TryAssignGameObject(checkersPocs[count].GameObject);
                 count++;
             }
 

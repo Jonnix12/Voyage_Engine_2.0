@@ -2,6 +2,12 @@
 
 namespace Voyage_Engine.Rendere_Engine.Vector;
 
+/* 
+ * This is our vector 2 class. We made it before changing the Render Engine to MonoGame engine.
+ * The MonoGame engine is using their own vector 2 class so we decided to keep this class to show our work but we are not using in to get away with potential bugs
+ */
+
+
 public struct Vector2 // not implemented 
 {
     public float X { get; private set; }
