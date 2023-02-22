@@ -34,6 +34,9 @@ public class MainRenderEngine : Game
     public event Action OnAfterFrame;
     public event Action OnCloseWindow;
 
+    /// <summary>
+    /// Create and define the console window
+    /// </summary>
     protected override void Initialize()
     {
         _graphics.IsFullScreen = false;
@@ -44,6 +47,7 @@ public class MainRenderEngine : Game
         base.Initialize();
     }
 
+    //Load the sprites to the memory
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -80,6 +84,7 @@ public class MainRenderEngine : Game
         base.Update(gameTime);
     }
 
+    //Draw the sprites on the console
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
