@@ -73,9 +73,7 @@ public class GameDataHandler : GameObject
     private void BoardClick(GameObject gameObject)
     {
         var tile = gameObject.GetComponent<Tile>();
-
         
-
         if (_playerSelect.IsTileSelected)
         {
             if (tile.Equals(SelectedTile))

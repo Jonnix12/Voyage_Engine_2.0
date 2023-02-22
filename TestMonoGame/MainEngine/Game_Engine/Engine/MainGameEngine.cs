@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using Microsoft.Xna.Framework.Input;
 using Voyage_Engine.Game_Engine.SceneSystem;
 using Voyage_Engine.Game_Engine.TransformSystem;
 using Voyage_Engine.Rendere_Engine;
-using Keys = System.Windows.Forms.Keys;
 
 namespace Voyage_Engine.Game_Engine.Engine
 {
