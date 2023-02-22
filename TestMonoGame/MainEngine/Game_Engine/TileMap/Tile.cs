@@ -48,7 +48,7 @@ public class Tile : Component, IEquatable<Tile>
     
     public void SetToDeSelected()
     {
-        _spriteRenderer.SetColor(Color.White);
+        _spriteRenderer.ResetColor();
     }
 
     public GameObject RemoveTileObject()

@@ -18,7 +18,7 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
         public Transform Transform => _transform;
         public bool IsActive => _isActive;
 
-        public GameObject()
+        protected GameObject()
         {
             InitializedBaseObject();
 
@@ -145,17 +145,13 @@ namespace Voyage_Engine.Game_Engine.GameObjectSystem
 
         public void LateUpdate()
         {
-            
+            //not Implemented
         }
 
         public void Dispose()
         {
             for (int i = 0; i < _components.Count; i++)
-            {
                 _components[i].Dispose();
-            }
-            // foreach (var component in _components)
-            //     component.Dispose();
         }
     }
 }

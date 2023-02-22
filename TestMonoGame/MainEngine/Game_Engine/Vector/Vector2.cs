@@ -2,7 +2,7 @@
 
 namespace Voyage_Engine.Rendere_Engine.Vector
 {
-    public struct Vector2
+    public struct Vector2 // not implemented 
     {
         private float x;
         private float y;
