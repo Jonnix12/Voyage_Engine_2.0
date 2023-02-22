@@ -4,19 +4,19 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/ball.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/png-transparent-the-woman-warrior-female-woman-warrior-game-child-cg-artwork-thumbnail.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Solid_white.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/astronaut.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/bug.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/cat.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/dog.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/dracula.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/frankenstein.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/man.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/monster.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/old-man.png</File>
-    <File>C:/Users/liadh/מסמכים/C#/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/skull.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/ball.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/png-transparent-the-woman-warrior-female-woman-warrior-game-child-cg-artwork-thumbnail.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Solid_white.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/astronaut.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/bug.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/cat.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/dog.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/dracula.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/frankenstein.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/man.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/monster.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/old-man.png</File>
+    <File>D:/Unity Projects/Voyage_Engine_2.0/TestMonoGame/MainEngine/Content/Sprites/skull.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

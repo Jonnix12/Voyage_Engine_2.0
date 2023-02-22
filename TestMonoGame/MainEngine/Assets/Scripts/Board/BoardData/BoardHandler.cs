@@ -10,7 +10,6 @@ public class BoardHandler
     public event Action<Tile> OnPocEatnd;
     
     public TileMap.TileMap TileMap { get; }
-    
 
     public BoardHandler()
     {
@@ -33,7 +32,7 @@ public class BoardHandler
             return false;
 
         var gameObject = tile.RemoveTileObject();
-        TileMap[newColum, newRaw].GetComponent<Tile>().TryAssignGameObject(gameObject);
+        TileMap[newColum, newRaw].GetComponent<Tile>().TryAssiagGameObject(gameObject);
         return true;
     }
 
@@ -92,7 +91,7 @@ public class BoardHandler
                 if (tile.IsHaveValue)
                     return;
 
-                tile.TryAssignGameObject(checkersPocs[count].GameObject);
+                tile.TryAssiagGameObject(checkersPocs[count].GameObject);
                 count++;
             }
 
@@ -114,7 +113,7 @@ public class BoardHandler
                 if (tile.IsHaveValue)
                     return;
 
-                tile.TryAssignGameObject(checkersPocs[count].GameObject);
+                tile.TryAssiagGameObject(checkersPocs[count].GameObject);
                 count++;
             }
 
