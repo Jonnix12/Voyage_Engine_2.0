@@ -7,6 +7,11 @@ public class SpriteRenderer : RenderObject
 {
     private readonly Color _defaltColor;
 
+    /// <summary>
+    /// Load the sprite from the given path and put in the the layer 0
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="layer"></param>
     public SpriteRenderer(string path, int layer = 0)
     {
         Path = path;
@@ -15,6 +20,12 @@ public class SpriteRenderer : RenderObject
         _defaltColor = Color.White;
     }
 
+    /// <summary>
+    /// Load the sprite from given path, change his color and put in the the given layer
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="layer"></param>
+    /// <param name="color"></param>
     public SpriteRenderer(string path, int layer, Color color)
     {
         Path = path;

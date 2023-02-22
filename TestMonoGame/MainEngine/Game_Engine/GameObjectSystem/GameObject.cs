@@ -44,6 +44,9 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         //not Implemented
     }
 
+    /// <summary>
+    /// Initialize the GameObject
+    /// </summary>
     public GameObject GameObjectConstructor(Transform transform, string name)
     {
         transform.SetGameObject(this);
@@ -58,6 +61,11 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return this;
     }
 
+    /// <summary>
+    /// Get a reference to a component of the type T if one is found, otherwise null
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public T GetComponent<T>() where T : class, IComponent
     {
         foreach (var component in _components)
@@ -67,6 +75,11 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return null;
     }
 
+    /// <summary>
+    /// Adds a component class named className to the game object.
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
+    /// <returns></returns>
     public TComponent AddComponent<TComponent>() where TComponent : IComponent, new()
     {
         var component = new TComponent();
@@ -77,6 +90,13 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return component;
     }
 
+    /// <summary>
+    /// Receive a Component and 1 parameter for his constructor. Adds a component class named className to the game object. The parameter have to be in the same order as the component constructor.
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
+    /// <typeparam name="T1"></typeparam>
+    /// <param name="parameter1"></param>
+    /// <returns></returns>
     public TComponent AddComponent<TComponent, T1>(T1 parameter1) where TComponent : IComponent
     {
         var parameterTyps = new[] {typeof(T1)};
@@ -85,6 +105,15 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return AddComponent<TComponent>(parameterTyps, parameters);
     }
 
+    /// <summary>
+    /// Receive a Component and 2 parameter for his constructor. Adds a component class named className to the game object. The parameter have to be in the same order as the component constructor.
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
+    /// <typeparam name="T1"></typeparam>
+    /// <typeparam name="T2"></typeparam>
+    /// <param name="parameter1"></param>
+    /// <param name="parameter2"></param>
+    /// <returns></returns>
     public TComponent AddComponent<TComponent, T1, T2>(T1 parameter1, T2 parameter2) where TComponent : IComponent
     {
         var parameterTyps = new[] {typeof(T1), typeof(T2)};
@@ -93,6 +122,17 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return AddComponent<TComponent>(parameterTyps, parameters);
     }
 
+    /// <summary>
+    /// Receive a Component and 3 parameter for his constructor. Adds a component class named className to the game object. The parameter have to be in the same order as the component constructor.
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
+    /// <typeparam name="T1"></typeparam>
+    /// <typeparam name="T2"></typeparam>
+    /// <typeparam name="T3"></typeparam>
+    /// <param name="parameter1"></param>
+    /// <param name="parameter2"></param>
+    /// <param name="parameter3"></param>
+    /// <returns></returns>
     public TComponent AddComponent<TComponent, T1, T2, T3>(T1 parameter1, T2 parameter2, T3 parameter3)
         where TComponent : IComponent
     {
@@ -102,6 +142,19 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return AddComponent<TComponent>(parameterTyps, parameters);
     }
 
+    /// <summary>
+    /// Receive a Component and 4 parameter for his constructor. Adds a component class named className to the game object. The parameter have to be in the same order as the component constructor.
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
+    /// <typeparam name="T1"></typeparam>
+    /// <typeparam name="T2"></typeparam>
+    /// <typeparam name="T3"></typeparam>
+    /// <typeparam name="T4"></typeparam>
+    /// <param name="parameter1"></param>
+    /// <param name="parameter2"></param>
+    /// <param name="parameter3"></param>
+    /// <param name="parameter4"></param>
+    /// <returns></returns>
     public TComponent AddComponent<TComponent, T1, T2, T3, T4>(T1 parameter1, T2 parameter2, T3 parameter3,
         T4 parameter4) where TComponent : IComponent
     {
@@ -111,6 +164,21 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
         return AddComponent<TComponent>(parameterTyps, parameters);
     }
 
+    /// <summary>
+    /// Receive a Component and 5 parameter for his constructor. Adds a component class named className to the game object. The parameter have to be in the same order as the component constructor.
+    /// </summary>
+    /// <typeparam name="TComponent"></typeparam>
+    /// <typeparam name="T1"></typeparam>
+    /// <typeparam name="T2"></typeparam>
+    /// <typeparam name="T3"></typeparam>
+    /// <typeparam name="T4"></typeparam>
+    /// <typeparam name="T5"></typeparam>
+    /// <param name="parameter1"></param>
+    /// <param name="parameter2"></param>
+    /// <param name="parameter3"></param>
+    /// <param name="parameter4"></param>
+    /// <param name="parameter5"></param>
+    /// <returns></returns>
     public TComponent AddComponent<TComponent, T1, T2, T3, T4, T5>(T1 parameter1, T2 parameter2, T3 parameter3,
         T4 parameter4, T5 parameter5) where TComponent : IComponent
     {
