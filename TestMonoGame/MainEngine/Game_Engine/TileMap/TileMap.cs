@@ -13,6 +13,8 @@ public class TileMap : IEnumerable<GameObject>
     private readonly int _column;
     private readonly int _raw;
     private readonly GameObject[,] _grid;
+    
+    public GameObject this[int x, int y] => _grid[x, y];
 
     public TileMap(int column, int raw, Vector2 tileSize)
     {
@@ -46,8 +48,6 @@ public class TileMap : IEnumerable<GameObject>
             posX += tileSize.X;
         }
     }
-
-    public GameObject this[int x, int y] => _grid[x, y];
 
     public IEnumerator<GameObject> GetEnumerator()
     {

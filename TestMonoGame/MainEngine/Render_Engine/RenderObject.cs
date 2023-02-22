@@ -9,17 +9,16 @@ public abstract class RenderObject : Component, IRenderObject
 {
     protected Texture2D _texture2D;
 
-    protected RenderObject()
-    {
-        MainRenderEngine.RegisterObject(this);
-    }
-
     public Texture2D Texture2D => _texture2D;
 
     protected abstract string Path { get; }
     protected abstract Color Color { get; set; }
     public int Layer { get; set; }
-
+    
+    protected RenderObject()
+    {
+        MainRenderEngine.RegisterObject(this);
+    }
 
     public void LoadContent(ContentManager contentManager)
     {

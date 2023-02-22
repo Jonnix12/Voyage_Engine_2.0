@@ -7,16 +7,14 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
 {
     public static class Factory
     {
-        private static Transform _rootTransform = MainGameEngine.RootTransform;
-
         /// <summary>
         /// Create a GameObject at position 0,0 and return it
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static GameObject Instantiate<T>() where T: GameObject, new()
+        public static T Instantiate<T>() where T: GameObject, new()
         {
-            return Instantiate<T>(_rootTransform.Position, _rootTransform, _rootTransform.Scale);
+            return Instantiate<T>(MainGameEngine.RootTransform.Position, MainGameEngine.RootTransform, MainGameEngine.RootTransform.Scale);
         }
 
         /// <summary>
@@ -25,9 +23,9 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
         /// <typeparam name="T"></typeparam>
         /// <param name="position"></param>
         /// <returns></returns>
-        public static GameObject Instantiate<T>(Vector2 position) where T: GameObject, new()
+        public static T Instantiate<T>(Vector2 position) where T: GameObject, new()
         {
-            return Instantiate<T>(position, _rootTransform, _rootTransform.Scale);
+            return Instantiate<T>(position, MainGameEngine.RootTransform, MainGameEngine.RootTransform.Scale);
         }
 
         /// <summary>
@@ -36,7 +34,7 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
         /// <typeparam name="T"></typeparam>
         /// <param name="parent"></param>
         /// <returns></returns>
-        public static GameObject Instantiate<T>(Transform parent) where T: GameObject, new()
+        public static T Instantiate<T>(Transform parent) where T: GameObject, new()
         {
             return Instantiate<T>(parent.Position, parent, parent.Scale);
         }
@@ -48,9 +46,9 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
         /// <param name="position"></param>
         /// <param name="scale"></param>
         /// <returns></returns>
-        public static GameObject Instantiate<T>(Vector2 position, Vector2 scale) where T: GameObject, new()
+        public static T Instantiate<T>(Vector2 position, Vector2 scale) where T: GameObject, new()
         {
-            return Instantiate<T>(position, _rootTransform, scale);
+            return Instantiate<T>(position, MainGameEngine.RootTransform, scale);
         }
 
         /// <summary>
@@ -60,7 +58,7 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
         /// <param name="position"></param>
         /// <param name="parent"></param>
         /// <returns></returns>
-        public static GameObject Instantiate<T>(Vector2 position, Transform parent) where T: GameObject, new()
+        public static T Instantiate<T>(Vector2 position, Transform parent) where T: GameObject, new()
         {
             return Instantiate<T>(position, parent, parent.Scale);
         }
@@ -73,7 +71,7 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
         /// <param name="parent"></param>
         /// <param name="scale"></param>
         /// <returns></returns>
-        public static GameObject Instantiate<T>(Vector2 position, Transform parent, Vector2 scale) where T: GameObject, new()
+        public static T Instantiate<T>(Vector2 position, Transform parent, Vector2 scale) where T: GameObject, new()
         {
             T gameObject = new T();
             
@@ -81,7 +79,7 @@ namespace Voyage_Engine.Game_Engine.FactorySystem
             
             gameObject.GameObjectConstructor(transform,typeof(T).Name);
             
-            _rootTransform.AddChildren(gameObject.Transform);
+            MainGameEngine.RootTransform.AddChildren(gameObject.Transform);
             
             return gameObject;
         }

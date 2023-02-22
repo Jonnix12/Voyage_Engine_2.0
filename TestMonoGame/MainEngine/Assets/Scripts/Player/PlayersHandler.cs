@@ -5,13 +5,13 @@ namespace Voyage_Engine.Game_Engine.Objects.Scripts.Players;
 
 public class PlayersHandler
 {
+    public Player WhitePlayer { get; }
+
+    public Player BlackPlayer { get; }
+    
     public PlayersHandler()
     {
         WhitePlayer = Factory.Instantiate<WhitePlayerGameObject>().GetComponent<Player>();
         BlackPlayer = Factory.Instantiate<BlackPlayerGameObject>().GetComponent<Player>();
     }
-
-    public Player WhitePlayer { get; }
-
-    public Player BlackPlayer { get; }
 }

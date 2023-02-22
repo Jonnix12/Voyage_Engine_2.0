@@ -1,7 +1,4 @@
 ﻿using System.Threading;
-using Microsoft.Xna.Framework;
-using Voage_Engine.Assets.Scripts.Button;
-using Voyage_Engine.Game_Engine.FactorySystem;
 using Voyage_Engine.Game_Engine.Objects.Scripts;
 using Voyage_Engine.Game_Engine.SceneSystem;
 
@@ -15,7 +12,6 @@ public class MainScene : Scene
 
     public override void StartScene(CancellationToken cancellationToken)
     {
-        var button = (Button)Factory.Instantiate<Button>(new Vector2(1000, 100));
         _gameManager = new GameManager();
         base.StartScene(cancellationToken);
     }

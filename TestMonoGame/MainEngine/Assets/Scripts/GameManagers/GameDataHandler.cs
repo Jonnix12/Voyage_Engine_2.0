@@ -85,7 +85,7 @@ public class GameDataHandler : GameObject
                 if (_boardHandler.MovePoc(SelectedTile.Colm, SelectedTile.Row, tile.Colm, tile.Row,
                         SelectedTile.TileObject.GetComponent<CheckersPoc>().Id))
                 {
-                    var cache = _endGameHandler.CheckWin();
+                    GameManager.EndGame(_endGameHandler.CheckWin());
                     _turnManager.MoveToNextTurn();
                 }
 

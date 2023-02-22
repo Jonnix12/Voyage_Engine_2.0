@@ -16,7 +16,6 @@ public class MainGameEngine
     public MainGameEngine()
     {
         SceneManager.OnLoadedNewScne += ResetFrame;
-        SceneManager.SetFirstScene();
 
         _renderThread = new Thread(StartRenderEngine)
         {

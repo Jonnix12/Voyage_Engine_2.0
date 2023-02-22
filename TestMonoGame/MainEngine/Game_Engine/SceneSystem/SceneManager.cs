@@ -19,7 +19,7 @@ public static class SceneManager
         _sceneIndex = 0;
     }
 
-    public static Scene CurrentScene { get; private set; }
+    public static Scene CurrentScene => _scenes[_sceneIndex];
 
     public static event Action OnLoadedNewScne;
 
@@ -46,11 +46,6 @@ public static class SceneManager
         return null;
     }
 
-    public static void SetFirstScene() //set from start the first scene
-    {
-        CurrentScene = _scenes[_sceneIndex];
-    }
-
     public static void NextScene() //move to next scene
     {
         if (CurrentScene != null)
@@ -62,9 +57,7 @@ public static class SceneManager
             Debug.Log("no more scenes in the list");
             return;
         }
-
-        CurrentScene = _scenes[_sceneIndex];
-        //_currentScene.StartScene();
+        
         OnLoadedNewScne?.Invoke();
     }
 
@@ -78,11 +71,7 @@ public static class SceneManager
 
         _sceneIndex = sceneIndex;
 
-        CurrentScene = _scenes[_sceneIndex];
-        // _currentScene.StartScene();
         OnLoadedNewScne?.Invoke();
-
-        Debug.Log(CurrentScene.Name);
     }
 
     private static bool ValidateSceneIndex(int sceneBuildIndex)

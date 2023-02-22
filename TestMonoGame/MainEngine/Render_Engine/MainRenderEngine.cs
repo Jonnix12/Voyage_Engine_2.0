@@ -15,6 +15,8 @@ public class MainRenderEngine : Game
     private readonly GraphicsDeviceManager _graphics;
 
     private bool _isFirstFrame;
+    private bool _isContentLoaded;
+    
     private SpriteBatch _spriteBatch;
 
     private CancellationTokenSource _tokenSource;
@@ -54,6 +56,7 @@ public class MainRenderEngine : Game
         if (_renderObjects.Count > 0)
             _renderObjects.Sort();
         
+        _isContentLoaded = true;
     }
 
     protected override async void Update(GameTime gameTime)
@@ -84,6 +87,9 @@ public class MainRenderEngine : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
+        if (!_isContentLoaded)
+            return;
+
         _spriteBatch.Begin();
         foreach (var renderObject in _renderObjects) renderObject.Render(_spriteBatch);
         _spriteBatch.End();
@@ -111,6 +117,7 @@ public class MainRenderEngine : Game
         UnloadContent();
         _tokenSource.Cancel();
         _renderObjects.Clear();
+        _isContentLoaded = false;
         _isFirstFrame = true;
         _tokenSource = new CancellationTokenSource();
     }

@@ -7,6 +7,12 @@ namespace Voage_Engine.Assets.Scripts.Player;
 
 public class Player : Component
 {
+    public int PlayerId { get; }
+
+    public string PlayerName { get; }
+
+    public List<CheckersPoc> CheckersPocs { get; }
+    
     public Player(string playerName, int playerId)
     {
         PlayerName = playerName;
@@ -26,13 +32,6 @@ public class Player : Component
                     break;
             }
     }
-
-
-    public int PlayerId { get; }
-
-    public string PlayerName { get; }
-
-    public List<CheckersPoc> CheckersPocs { get; }
 
     public void RemovePoc(CheckersPoc poc)
     {

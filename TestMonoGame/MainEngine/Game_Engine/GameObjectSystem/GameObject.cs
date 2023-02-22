@@ -35,8 +35,8 @@ public class GameObject : BaseObject, IInstantiate, IGameObject, IDisposable
 
     public void Update()
     {
-        foreach (var component in _components)
-            component.UpdateComponent();
+        for (int i = 0; i < _components.Count; i++)
+            _components[i].UpdateComponent();
     }
 
     public void LateUpdate()

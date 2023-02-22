@@ -7,14 +7,15 @@ namespace Voyage_Engine.Game_Engine.Objects.Scripts.BoardUI;
 
 public class BoardHandler
 {
+    public event Action<Tile> OnPocEatnd;
+    
+    public TileMap.TileMap TileMap { get; }
+    
+
     public BoardHandler()
     {
         TileMap = new TileMap.TileMap(8, 8, new Vector2(70, 70));
     }
-
-    public TileMap.TileMap TileMap { get; }
-
-    public event Action<Tile> OnPocEatnd;
 
     public bool MovePoc(int colum, int raw, int newColum, int newRaw, int id)
     {
