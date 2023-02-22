@@ -1,9 +1,8 @@
-﻿namespace Voyage_Engine.Game_Engine.GameObjectSystem
+﻿namespace Voyage_Engine.Game_Engine.GameObjectSystem;
+
+public interface IGameObject
 {
-    public interface IGameObject
-    {
-        void Start();
-        void Update();
-        void LateUpdate();
-    }
+    void Start();
+    void Update();
+    void LateUpdate();
 }

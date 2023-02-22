@@ -8,7 +8,7 @@ public class WhiteCheckersPocGameObject : GameObject
 {
     public WhiteCheckersPocGameObject()
     {
-        AddComponent<SpriteRenderer,string,int>("Sprites/cat",0);
+        AddComponent<SpriteRenderer, string, int>("Sprites/cat", 1);
         AddComponent<CheckersPoc, int>(1);
         //AddComponent<Button>();
     }

@@ -1,34 +1,30 @@
 ﻿using Voyage_Engine.Game_Engine.GameObjectSystem;
 using Voyage_Engine.Game_Engine.TransformSystem;
 
-namespace Voyage_Engine.Game_Engine.ComponentSystem
+namespace Voyage_Engine.Game_Engine.ComponentSystem;
+
+public class Component : BaseObject, IComponent
 {
-    public class Component : BaseObject , IComponent
+    public Transform Transform { get; private set; }
+
+    public GameObject GameObject { get; private set; }
+
+    public virtual void Dispose()
     {
-        private Transform _transform;
-        private GameObject _gameObject;
+        GameObject.RemoveComponent(this);
+        GameObject = null;
+        Transform = null;
+    }
 
-        public Transform Transform => _transform;
+    public void InitComponent(GameObject gameObject)
+    {
+        InitializedBaseObject();
 
-        public GameObject GameObject => _gameObject;
+        GameObject = gameObject;
+        Transform = gameObject.Transform;
+    }
 
-        public virtual void Dispose()
-        {
-            _gameObject.RemoveComponent(this);
-            _gameObject = null;
-            _transform = null;
-        }
-
-        public void InitComponent(GameObject gameObject)
-        {
-            InitializedBaseObject();
-            
-            _gameObject = gameObject;
-            _transform = gameObject.Transform;
-        }
-
-        public virtual void UpdateComponent()
-        {
-        }
+    public virtual void UpdateComponent()
+    {
     }
 }

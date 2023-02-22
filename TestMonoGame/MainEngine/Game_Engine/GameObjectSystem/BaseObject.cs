@@ -1,18 +1,13 @@
-﻿
-using System;
-using Voyage_Engine.Game_Engine.Engine;
+﻿using Voyage_Engine.Game_Engine.Engine;
 
-namespace Voyage_Engine.Game_Engine.GameObjectSystem
+namespace Voyage_Engine.Game_Engine.GameObjectSystem;
+
+public abstract class BaseObject
 {
-    public abstract class BaseObject
+    public int InstanceId { get; private set; } = -1;
+
+    protected void InitializedBaseObject()
     {
-        private int _instanceID = -1;
-
-        public int InstanceId => _instanceID;
-
-        protected void InitializedBaseObject()
-        {
-            _instanceID = InstanceIDGenerator.GetInstanceID(this);
-        }
+        InstanceId = InstanceIDGenerator.GetInstanceID(this);
     }
 }

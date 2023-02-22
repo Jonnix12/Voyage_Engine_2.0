@@ -10,37 +10,35 @@ namespace Voyage_Engine.Game_Engine.Objects.Scripts;
 
 public class GameDataHandler : GameObject
 {
-    private TurnManager _turnManager;
-    private PlayersHandler _playersHandler;
-    private BoardHandler _boardHandler;
+    private readonly BoardHandler _boardHandler;
 
-    private PlayerSelect _playerSelect;
+    private readonly PlayerSelect _playerSelect;
+    private readonly PlayersHandler _playersHandler;
+    private readonly TurnManager _turnManager;
 
-    private Tile SelectedTile => _playerSelect.SelectedTile;
-    
+    private EndGameHandler _endGameHandler;
+
     public GameDataHandler()
     {
         _boardHandler = new BoardHandler();
 
         _boardHandler.OnPocEatnd += PocEatend;
-        
+
         _playersHandler = new PlayersHandler();
 
         _playerSelect = new PlayerSelect();
 
-        Player[] players = new[] {_playersHandler.WhitePlayer, _playersHandler.BlackPlayer};
+        Player[] players = {_playersHandler.WhitePlayer, _playersHandler.BlackPlayer};
 
+        _endGameHandler = new EndGameHandler(players);
         _turnManager = new TurnManager(players);
 
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                _boardHandler.TileMap[i, j].GetComponent<Button>().Click += BoardClick;
-            }
-        }
-        
+        for (var i = 0; i < 8; i++)
+        for (var j = 0; j < 8; j++)
+            _boardHandler.TileMap[i, j].GetComponent<InputObject>().Click += BoardClick;
     }
+
+    private Tile SelectedTile => _playerSelect.SelectedTile;
 
     public override void Start()
     {
@@ -67,13 +65,12 @@ public class GameDataHandler : GameObject
                 _playersHandler.WhitePlayer.RemovePoc(poc);
                 break;
         }
-
     }
 
     private void BoardClick(GameObject gameObject)
     {
         var tile = gameObject.GetComponent<Tile>();
-        
+
         if (_playerSelect.IsTileSelected)
         {
             if (tile.Equals(SelectedTile))
@@ -88,9 +85,10 @@ public class GameDataHandler : GameObject
                 if (_boardHandler.MovePoc(SelectedTile.Colm, SelectedTile.Row, tile.Colm, tile.Row,
                         SelectedTile.TileObject.GetComponent<CheckersPoc>().Id))
                 {
+                    var cache = _endGameHandler.CheckWin();
                     _turnManager.MoveToNextTurn();
                 }
-                
+
                 _playerSelect.ReleaseTile();
             }
         }
@@ -98,10 +96,10 @@ public class GameDataHandler : GameObject
         {
             if (!tile.IsHaveValue)
                 return;
-            
+
             if (_turnManager.CurrentPlayer.PlayerId != tile.TileObject.GetComponent<CheckersPoc>().Id)
                 return;
-            
+
             _playerSelect.SelectTile(tile);
         }
     }
@@ -110,12 +108,8 @@ public class GameDataHandler : GameObject
     {
         _boardHandler.OnPocEatnd -= PocEatend;
 
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                _boardHandler.TileMap[i, j].GetComponent<Button>().Click -= BoardClick;
-            }
-        }
+        for (var i = 0; i < 8; i++)
+        for (var j = 0; j < 8; j++)
+            _boardHandler.TileMap[i, j].GetComponent<InputObject>().Click -= BoardClick;
     }
 }

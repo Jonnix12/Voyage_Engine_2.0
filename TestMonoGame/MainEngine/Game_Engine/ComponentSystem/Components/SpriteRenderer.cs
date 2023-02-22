@@ -5,26 +5,26 @@ namespace Voyage_Engine.Game_Engine.ComponentSystem.Components;
 
 public class SpriteRenderer : RenderObject
 {
-    protected override string Path { get; }
-    protected sealed override Color Color { get;  set; }
+    private readonly Color _defaltColor;
 
-    private Color _defaltColor;
-
-    public SpriteRenderer(string path,int layer = 0)
+    public SpriteRenderer(string path, int layer = 0)
     {
         Path = path;
         Layer = layer;
         Color = Color.White;
         _defaltColor = Color.White;
     }
-    
-    public SpriteRenderer(string path,int layer,Color color)
+
+    public SpriteRenderer(string path, int layer, Color color)
     {
         Path = path;
         Layer = layer;
         Color = color;
         _defaltColor = color;
     }
+
+    protected override string Path { get; }
+    protected sealed override Color Color { get; set; }
 
     public void SetColor(Color color)
     {

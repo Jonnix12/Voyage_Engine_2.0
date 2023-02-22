@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Voyage_Engine.Rendere_Engine;
 
-public interface IRenderObject : IComparable<int>
+public interface IRenderObject : IComparable
 {
     public int Layer { get; protected set; }
     void LoadContent(ContentManager contentManager);

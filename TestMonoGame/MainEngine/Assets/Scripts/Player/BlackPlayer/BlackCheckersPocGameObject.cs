@@ -8,8 +8,8 @@ public class BlackCheckersPocGameObject : GameObject
 {
     public BlackCheckersPocGameObject()
     {
-        AddComponent<SpriteRenderer,string,int>("Sprites/dog",0);
-        AddComponent<Button>();
+        AddComponent<SpriteRenderer, string, int>("Sprites/dog", 1);
+        AddComponent<InputObject>();
         AddComponent<CheckersPoc, int>(2);
     }
 }

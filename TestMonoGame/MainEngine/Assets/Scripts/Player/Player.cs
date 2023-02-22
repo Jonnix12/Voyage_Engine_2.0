@@ -5,46 +5,38 @@ using Voyage_Engine.Game_Engine.Objects.Scripts;
 
 namespace Voage_Engine.Assets.Scripts.Player;
 
-public class Player : Component 
+public class Player : Component
 {
-    private int _playerID;
-    private string _playerName;
-
-   
-    public int PlayerId => _playerID;
-
-    public string PlayerName => _playerName;
-
-    private List<CheckersPoc> _checkersPocs;
-
-    public List<CheckersPoc> CheckersPocs => _checkersPocs;
-
-    public Player(string playerName,int playerId)
+    public Player(string playerName, int playerId)
     {
-        _playerName = playerName;
-        _playerID = playerId;
-        
-        
-        _checkersPocs = new List<CheckersPoc>(12);
+        PlayerName = playerName;
+        PlayerId = playerId;
 
-        for (int i = 0; i < 12; i++)
-        {
+
+        CheckersPocs = new List<CheckersPoc>(12);
+
+        for (var i = 0; i < 12; i++)
             switch (playerId)
             {
                 case 1:
-                    _checkersPocs.Add(Factory.Instantiate<WhiteCheckersPocGameObject>().GetComponent<CheckersPoc>());
+                    CheckersPocs.Add(Factory.Instantiate<WhiteCheckersPocGameObject>().GetComponent<CheckersPoc>());
                     break;
                 case 2:
-                    _checkersPocs.Add(Factory.Instantiate<BlackCheckersPocGameObject>().GetComponent<CheckersPoc>());
+                    CheckersPocs.Add(Factory.Instantiate<BlackCheckersPocGameObject>().GetComponent<CheckersPoc>());
                     break;
             }
-        }
     }
+
+
+    public int PlayerId { get; }
+
+    public string PlayerName { get; }
+
+    public List<CheckersPoc> CheckersPocs { get; }
 
     public void RemovePoc(CheckersPoc poc)
     {
-        _checkersPocs.Remove(poc);
+        CheckersPocs.Remove(poc);
         poc.GameObject.Dispose();
     }
-    
 }

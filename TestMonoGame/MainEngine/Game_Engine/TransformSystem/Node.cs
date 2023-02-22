@@ -1,40 +1,30 @@
 ﻿using System.Collections.Generic;
 
-namespace Voyage_Engine.Game_Engine.TransformSystem
+namespace Voyage_Engine.Game_Engine.TransformSystem;
+
+public class Node
 {
-    public class Node
+    public Node()
     {
-        private Transform _parent;
-        private List<Transform> _children;
+        Children = new List<Transform>();
+    }
 
-        public Transform Parent => _parent;
+    public Transform Parent { get; private set; }
 
-        public List<Transform> Children => _children;
+    public List<Transform> Children { get; }
 
-        public Node()
-        {
-            _children = new List<Transform>();
-        }
+    public void SetParent(Transform parent)
+    {
+        Parent = parent;
+    }
 
-        public void SetParent(Transform parent)
-        {
-            _parent = parent;
-        }
+    public void AddChildren(params Transform[] children)
+    {
+        foreach (var transform in children) Children.Add(transform);
+    }
 
-        public void AddChildren(params Transform[] children)
-        {
-            foreach (var transform in children)
-            {
-                _children.Add(transform);
-            }
-        }
-
-        public void RemoveChildren(params Transform[] children)
-        {
-            foreach (var transform in children)
-            {
-                _children.Remove(transform);
-            }
-        }
+    public void RemoveChildren(params Transform[] children)
+    {
+        foreach (var transform in children) Children.Remove(transform);
     }
 }

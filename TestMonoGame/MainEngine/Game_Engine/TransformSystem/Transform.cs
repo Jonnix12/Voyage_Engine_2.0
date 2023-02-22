@@ -2,85 +2,78 @@
 using Voyage_Engine.Game_Engine.Engine;
 using Voyage_Engine.Game_Engine.GameObjectSystem;
 
-namespace Voyage_Engine.Game_Engine.TransformSystem
+namespace Voyage_Engine.Game_Engine.TransformSystem;
+
+public class Transform : Node
 {
-    public class Transform : Node
+    private float _positionX;
+    private float _positionY;
+    private float _scaleX;
+    private float _scaleY;
+
+    public Transform()
     {
-        private float _positionX;
-        private float _positionY;
-        private float _scaleX;
-        private float _scaleY;
-        
-        private GameObject _gameObject;
+        _positionX = 0;
+        _positionY = 0;
+        _scaleX = 100;
+        _scaleY = 100;
+    }
 
-       
-        public Vector2 Position { 
-            get
-            {
-                return new Vector2(_positionX, _positionY);
-            } set
-            {
-                _positionX = value.X;
-                _positionY = value.Y;
-            }
-        }
+    public Transform(Transform parent)
+    {
+        SetParent(parent);
+    }
 
-        public Vector2 Scale
+    public Transform(Vector2 position, Vector2 scale)
+    {
+        _positionX = position.X;
+        _positionY = position.Y;
+        _scaleX = scale.X;
+        _scaleY = scale.Y;
+        SetParent(MainGameEngine.RootTransform);
+    }
+
+    public Transform(Vector2 position, Vector2 scale, Transform parent)
+    {
+        _positionX = position.X;
+        _positionY = position.Y;
+        _scaleX = scale.X;
+        _scaleY = scale.Y;
+        SetParent(parent);
+    }
+
+
+    public Vector2 Position
+    {
+        get => new Vector2(_positionX, _positionY);
+        set
         {
-            get
-            {
-                return new Vector2(_scaleX, _scaleY);
-            }
-            set
-            {
-                _scaleX = value.X;
-                _scaleY = value.Y;
-            }
+            _positionX = value.X;
+            _positionY = value.Y;
         }
+    }
 
-        public GameObject GameObject => _gameObject;
-        
-        public bool HaveChildren => Children.Count == 0;
+    public Vector2 Scale
+    {
+        get => new Vector2(_scaleX, _scaleY);
+        set
+        {
+            _scaleX = value.X;
+            _scaleY = value.Y;
+        }
+    }
 
-        public Transform()
-        {
-            _positionX = 0;
-            _positionY = 0;
-            _scaleX = 0;
-            _scaleY = 0;
-        }
+    public GameObject GameObject { get; private set; }
 
-        public Transform(Transform parent)
-        {
-            SetParent(parent);
-        }
+    public bool HaveChildren => Children.Count == 0;
 
-        public Transform(Vector2 position, Vector2 scale)
-        {
-            _positionX = position.X;
-            _positionY = position.Y;
-            _scaleX = scale.X;
-            _scaleY = scale.Y;
-            SetParent(MainGameEngine.RootTransform);
-        }
-        
-        public Transform(Vector2 position, Vector2 scale, Transform parent)
-        {
-            _positionX = position.X;
-            _positionY = position.Y;
-            _scaleX = scale.X;
-            _scaleY = scale.Y;
-            SetParent(parent);
-        }
+    public void MoveTowards(Vector2 destination, float maxDistanceDelta)
+    {
+        //Position = Vector2.MoveTowards(Position, destination, maxDistanceDelta);
+    }
 
-        public void MoveTowards(Vector2 destination,float maxDistanceDelta)
-        {
-            //Position = Vector2.MoveTowards(Position, destination, maxDistanceDelta);
-        }
-
-        public void SetGameObject(GameObject gameObject)
-        {
-            _gameObject = gameObject;
-        }
+    public void SetGameObject(GameObject gameObject)
+    {
+        GameObject = gameObject;
     }
 }

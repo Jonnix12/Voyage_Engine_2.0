@@ -1,11 +1,10 @@
 ﻿using System;
 using Voyage_Engine.Game_Engine.GameObjectSystem;
 
-namespace Voyage_Engine.Game_Engine.ComponentSystem
+namespace Voyage_Engine.Game_Engine.ComponentSystem;
+
+public interface IComponent : IDisposable
 {
-    public interface IComponent : IDisposable
-    {
-        void InitComponent(GameObject gameObject);
-        void UpdateComponent();
-    }
+    void InitComponent(GameObject gameObject);
+    void UpdateComponent();
 }

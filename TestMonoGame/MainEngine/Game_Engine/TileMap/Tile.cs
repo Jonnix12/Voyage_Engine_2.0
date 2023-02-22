@@ -8,33 +8,35 @@ namespace Voyage_Engine.Game_Engine.TileMap;
 
 public class Tile : Component, IEquatable<Tile>
 {
-    private GameObject _tileObject;
-
     private SpriteRenderer _spriteRenderer;
 
-    public GameObject TileObject => _tileObject;
-
-    public bool IsHaveValue => _tileObject != null;
-    public int Row { get; private set; }
-    public int Colm { get; private set; }
-
-    public Tile(int colm,int row)
+    public Tile(int colm, int row)
     {
         Row = row;
         Colm = colm;
     }
 
+    public GameObject TileObject { get; private set; }
+
+    public bool IsHaveValue => TileObject != null;
+    public int Row { get; }
+    public int Colm { get; }
+
+    public bool Equals(Tile other)
+    {
+        if (other == null)
+            return false;
+        return other.Row == Row && other.Colm == Colm;
+    }
+
     public bool TryAssiagGameObject(GameObject gameObject)
     {
-        if (_tileObject != null)
-        {
-            return false;
-        }
+        if (TileObject != null) return false;
 
-        _tileObject = gameObject;
+        TileObject = gameObject;
 
-        _tileObject.Transform.Position = Transform.Position;
-        _tileObject.Transform.Scale = Transform.Scale * 0.75f;
+        TileObject.Transform.Position = Transform.Position;
+        TileObject.Transform.Scale = Transform.Scale * 0.75f;
 
         return true;
     }
@@ -45,7 +47,7 @@ public class Tile : Component, IEquatable<Tile>
 
         _spriteRenderer.SetColor(Color.Red);
     }
-    
+
     public void SetToDeSelected()
     {
         _spriteRenderer.ResetColor();
@@ -53,21 +55,14 @@ public class Tile : Component, IEquatable<Tile>
 
     public GameObject RemoveTileObject()
     {
-        if (_tileObject != null)
+        if (TileObject != null)
         {
-            var cache = _tileObject;
-            _tileObject = null;
+            var cache = TileObject;
+            TileObject = null;
 
             return cache;
         }
 
         return null;
-    }
-
-    public bool Equals(Tile other)
-    {
-        if (other == null)
-            return false;
-        return other.Row == Row && other.Colm == Colm;
     }
 }

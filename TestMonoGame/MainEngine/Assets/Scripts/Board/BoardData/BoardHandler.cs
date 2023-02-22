@@ -7,46 +7,44 @@ namespace Voyage_Engine.Game_Engine.Objects.Scripts.BoardUI;
 
 public class BoardHandler
 {
-    public event Action<Tile> OnPocEatnd;
-    
-    private TileMap.TileMap _tileMap;
-
-    public TileMap.TileMap TileMap => _tileMap;
-
     public BoardHandler()
     {
-        _tileMap = new TileMap.TileMap(8, 8,new Vector2(70,70));
+        TileMap = new TileMap.TileMap(8, 8, new Vector2(70, 70));
     }
+
+    public TileMap.TileMap TileMap { get; }
+
+    public event Action<Tile> OnPocEatnd;
 
     public bool MovePoc(int colum, int raw, int newColum, int newRaw, int id)
     {
-        if (!IsValidMove(colum,raw,ref newColum,ref newRaw,id))
+        if (!IsValidMove(colum, raw, ref newColum, ref newRaw, id))
             return false;
-        
-        var tile = _tileMap[colum, raw].GetComponent<Tile>();
-        
+
+        var tile = TileMap[colum, raw].GetComponent<Tile>();
+
         if (!tile.IsHaveValue)
             return false;
 
         var temp = tile.TileObject.GetComponent<CheckersPoc>();
-        
+
         if (temp.Id != id)
             return false;
 
         var gameObject = tile.RemoveTileObject();
-        _tileMap[newColum, newRaw].GetComponent<Tile>().TryAssiagGameObject(gameObject);
+        TileMap[newColum, newRaw].GetComponent<Tile>().TryAssiagGameObject(gameObject);
         return true;
     }
 
-    private bool IsValidMove(int colum, int raw,ref int newColum,ref int newRaw,int id)
+    private bool IsValidMove(int colum, int raw, ref int newColum, ref int newRaw, int id)
     {
-        bool isDiagonal = false;
-        bool isForward = false;
+        var isDiagonal = false;
+        var isForward = false;
 
         var rawRemainder = newRaw - raw;
         var columnRemainder = newColum - colum;
-        
-        if ( Math.Abs(columnRemainder) ==  Math.Abs(rawRemainder))
+
+        if (Math.Abs(columnRemainder) == Math.Abs(rawRemainder))
             isDiagonal = true;
 
         switch (id)
@@ -60,16 +58,16 @@ public class BoardHandler
                     isForward = true;
                 break;
         }
-        
-        var nextRaw = raw + (rawRemainder / Math.Abs(rawRemainder));
-        var nextColum = colum + (columnRemainder / Math.Abs(columnRemainder));
 
-        var nextTile = _tileMap[nextColum, nextRaw].GetComponent<Tile>();
+        var nextRaw = raw + rawRemainder / Math.Abs(rawRemainder);
+        var nextColum = colum + columnRemainder / Math.Abs(columnRemainder);
+
+        var nextTile = TileMap[nextColum, nextRaw].GetComponent<Tile>();
 
         if (nextTile.IsHaveValue && nextTile.TileObject.GetComponent<CheckersPoc>().Id != id)
         {
             OnPocEatnd?.Invoke(nextTile);
-            
+
             return isDiagonal && isForward;
         }
 
@@ -81,15 +79,14 @@ public class BoardHandler
 
     public void AddBlackPlayerPoc(params CheckersPoc[] checkersPocs)
     {
-        int count = 0;
-        int startColumn = 1;
-        
-        for (int j = 0; j < 3; j++)
-        {
-            for (int i = startColumn; i < 8; i += 2)
-            {
+        var count = 0;
+        var startColumn = 1;
 
-                var tile = _tileMap[i, j].GetComponent<Tile>();
+        for (var j = 0; j < 3; j++)
+        {
+            for (var i = startColumn; i < 8; i += 2)
+            {
+                var tile = TileMap[i, j].GetComponent<Tile>();
 
                 if (tile.IsHaveValue)
                     return;
@@ -101,18 +98,17 @@ public class BoardHandler
             startColumn = startColumn == 1 ? 0 : 1;
         }
     }
-    
+
     public void AddWhitePlayerPoc(params CheckersPoc[] checkersPocs)
     {
-        int count = 0;
-        int startColumn = 0;
-        
-        for (int j = 5; j < 8; j++)
-        {
-            for (int i = startColumn; i < 8; i += 2)
-            {
+        var count = 0;
+        var startColumn = 0;
 
-                var tile = _tileMap[i, j].GetComponent<Tile>();
+        for (var j = 5; j < 8; j++)
+        {
+            for (var i = startColumn; i < 8; i += 2)
+            {
+                var tile = TileMap[i, j].GetComponent<Tile>();
 
                 if (tile.IsHaveValue)
                     return;

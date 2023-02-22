@@ -5,22 +5,20 @@ namespace Voage_Engine.Assets.Scripts.Player;
 
 public class PlayerSelect : Component
 {
-    private Tile _selectedTile;
+    public Tile SelectedTile { get; private set; }
 
-    public Tile SelectedTile => _selectedTile;
+    public bool IsTileSelected => SelectedTile != null;
 
-    public bool IsTileSelected => _selectedTile != null;
-    
     public void SelectTile(Tile tile)
     {
         tile.SetToSelected();
-        _selectedTile = tile;
+        SelectedTile = tile;
     }
 
     public Tile ReleaseTile()
     {
-        var cache = _selectedTile;
-        _selectedTile = null;
+        var cache = SelectedTile;
+        SelectedTile = null;
         cache.SetToDeSelected();
         return cache;
     }
